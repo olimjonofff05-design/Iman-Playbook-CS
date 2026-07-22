@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* IMAN uslubidagi issiq palitra */
+  --color-bg: #EFE3CC;
+  --color-surface: #FBF6EC;
+  --color-surface-alt: #F3E9D6;
+  --color-border: #E2D2AF;
+  --color-text: #241C15;
+  --color-text-muted: #8C7A61;
+  --color-accent: #7A3423;
+  --color-accent-hover: #5E2818;
+  --color-accent-soft: #F0DFC4;
+  --color-accent-soft-text: #6B3420;
+
+  --color-sidebar-bg: #1E1712;
+  --color-sidebar-text: #EAE0CC;
+  --color-sidebar-text-muted: #A6957C;
+  --color-sidebar-active-bg: #34281F;
+  --color-sidebar-active-text: #E7B77E;
+
+  --shadow-soft: 0 6px 20px rgba(36, 28, 21, 0.08);
+  --shadow-hover: 0 12px 28px rgba(36, 28, 21, 0.14);
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  font: 16px/1.5 var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  margin: 0;
+}
+
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+button, input, select {
+  font-family: var(--font-sans);
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+/* Butun ilova bo'ylab wide-tracked uppercase label uslubi (skrindagi kabi) */
+.label-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
