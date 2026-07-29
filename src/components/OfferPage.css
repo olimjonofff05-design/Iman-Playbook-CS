@@ -129,3 +129,20 @@
     font-size: 13px;
     color: var(--color-accent);
 }
+
+@media (max-width: 640px) {
+    .document-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .document-actions {
+        width: 100%;
+    }
+
+    .document-actions a {
+        flex: 1;
+        text-align: center;
+    }
+}

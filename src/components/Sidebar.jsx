@@ -14,31 +14,48 @@ const MENU_KEYS = [
   "settings",
 ];
 
-function Sidebar({ page, setPage }) {
+function Sidebar({ page, setPage, isOpen = false, onClose }) {
   const { t } = useLanguage();
 
   return (
-    <div className="sidebar">
-      <h3>Menu</h3>
+    <>
+      <div
+        className={`sidebar-overlay ${isOpen ? "visible" : ""}`}
+        onClick={onClose}
+      />
 
-      <ul>
-        {MENU_KEYS.map((key) => {
-          const Icon = icons[key];
-          return (
-            <li
-              key={key}
-              className={page === key ? "active" : ""}
-              onClick={() => setPage(key)}
-            >
-              <Icon size={18} strokeWidth={1.75} className="menu-icon" />
-              <span>{t(`menu.${key}`)}</span>
-            </li>
-          );
-        })}
-      </ul>
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+        <div className="sidebar-top">
+          <h3>Menu</h3>
+          <button
+            type="button"
+            className="sidebar-close"
+            aria-label="Close menu"
+            onClick={onClose}
+          >
+            ×
+          </button>
+        </div>
 
-      <div className="sidebar-footer">{t("app.owner")}</div>
-    </div>
+        <ul>
+          {MENU_KEYS.map((key) => {
+            const Icon = icons[key];
+            return (
+              <li
+                key={key}
+                className={page === key ? "active" : ""}
+                onClick={() => setPage(key)}
+              >
+                <Icon size={18} strokeWidth={1.75} className="menu-icon" />
+                <span>{t(`menu.${key}`)}</span>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className="sidebar-footer">{t("app.owner")}</div>
+      </div>
+    </>
   );
 }
 

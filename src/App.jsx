@@ -16,6 +16,7 @@ import "./Layout.css";
 
 function App() {
   const [page, setPage] = useState("dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   function renderPage() {
     switch (page) {
@@ -53,10 +54,18 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header onMenuClick={() => setSidebarOpen(true)} />
 
       <div className="layout">
-        <Sidebar page={page} setPage={setPage} />
+        <Sidebar
+          page={page}
+          setPage={(key) => {
+            setPage(key);
+            setSidebarOpen(false);
+          }}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+        />
 
         <div className="content">{renderPage()}</div>
       </div>
