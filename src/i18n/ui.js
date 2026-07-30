@@ -52,6 +52,7 @@ export const ui = {
       emptyState: "Hozircha hujjat yuklanmagan. Oferta faylini public/documents/ papkasiga joylab, src/data/documents.js faylida ro'yxatga qo'shing.",
       view: "Ko'rish",
       download: "Yuklab olish",
+      pending: "Fayl kutilmoqda",
       intro: {
         heading: "Ommaviy oferta",
         lead: "\"IMAN\" ilovasi foydalanuvchilarga quyidagi imkoniyatlarni taqdim etadi:",
@@ -76,6 +77,10 @@ export const ui = {
       groups: {
         online: "Onlayn oldi-sotdi shartnomasi (1-11 oylik muddat)",
         offline: "Oflayn oldi-sotdi shartnomasi (1-11 oylik muddat)",
+        invest: "Investorlar uchun oferta",
+        "lease-online": "Onlayn Ijara shartnomasi (12+ oy)",
+        "lease-offline": "Oflayn Ijara shartnomasi (12+ oy)",
+        addendum: "Qo'shimcha kelishuvlar",
       },
     },
     settings: {
@@ -140,6 +145,7 @@ export const ui = {
       emptyState: "Пока документ не загружен. Поместите файл оферты в public/documents/ и добавьте в список в src/data/documents.js.",
       view: "Просмотреть",
       download: "Скачать",
+      pending: "Файл ожидается",
       intro: {
         heading: "Публичная оферта",
         lead: "Приложение «IMAN» предоставляет пользователям следующие возможности:",
@@ -164,6 +170,10 @@ export const ui = {
       groups: {
         online: "Договор купли-продажи онлайн (срок 1-11 месяцев)",
         offline: "Договор купли-продажи офлайн (срок 1-11 месяцев)",
+        invest: "Оферта для инвесторов",
+        "lease-online": "Договор аренды онлайн (12+ месяцев)",
+        "lease-offline": "Договор аренды офлайн (12+ месяцев)",
+        addendum: "Дополнительные соглашения",
       },
     },
     settings: {

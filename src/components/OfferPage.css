@@ -215,6 +215,19 @@
     border-color: var(--color-accent);
 }
 
+.document-pending {
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    background: var(--color-surface-alt);
+    color: var(--color-text-muted);
+    border: 1px dashed var(--color-border);
+}
+
 .empty-state {
     padding: 40px 20px;
     text-align: center;

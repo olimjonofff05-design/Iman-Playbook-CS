@@ -5,9 +5,10 @@ import { useLanguage } from "../context/LanguageContext";
 import { icons } from "../icons";
 import { ChevronDown } from "lucide-react";
 
-const GROUP_ORDER = ["online", "offline"];
+const GROUP_ORDER = ["online", "offline", "invest", "lease-online", "lease-offline", "addendum"];
 
 function DocumentCard({ doc, language, t, Icon }) {
+  const hasFile = Boolean(doc.file);
   return (
     <div className="document-card">
       <div className="document-icon">
@@ -20,12 +21,18 @@ function DocumentCard({ doc, language, t, Icon }) {
         )}
       </div>
       <div className="document-actions">
-        <a href={doc.file} target="_blank" rel="noopener noreferrer">
-          {t("offer.view")}
-        </a>
-        <a href={doc.file} download>
-          {t("offer.download")}
-        </a>
+        {hasFile ? (
+          <>
+            <a href={doc.file} target="_blank" rel="noopener noreferrer">
+              {t("offer.view")}
+            </a>
+            <a href={doc.file} download>
+              {t("offer.download")}
+            </a>
+          </>
+        ) : (
+          <span className="document-pending">{t("offer.pending")}</span>
+        )}
       </div>
     </div>
   );
