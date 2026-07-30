@@ -52,6 +52,31 @@ export const ui = {
       emptyState: "Hozircha hujjat yuklanmagan. Oferta faylini public/documents/ papkasiga joylab, src/data/documents.js faylida ro'yxatga qo'shing.",
       view: "Ko'rish",
       download: "Yuklab olish",
+      intro: {
+        heading: "Ommaviy oferta",
+        lead: "\"IMAN\" ilovasi foydalanuvchilarga quyidagi imkoniyatlarni taqdim etadi:",
+        bullets: [
+          "Tovarlarni 1 oydan 11 oygacha nasiya savdoga \"Oldi-sotdi shartnomasini tuzish bo'yicha oferta\" (ONLAYN & OFLAYN) asosida sotib olish;",
+          "\"Moliyaviy ijara shaklida tuzilgan shartnoma bo'yicha oferta\"ni tuzish orqali tovarlarni 12 oy yoki undan ko'proq muddatga ijara to'lovlarini to'lash sharti bilan moliyaviy ijaraga olish;",
+        ],
+        afterBullets:
+          "\"IMAN\" platformasida har qanday bitim tuzish uchun foydalanuvchi ushbu sahifada joylashgan \"IMAN\" foydalanuvchilari uchun taqdim etilgan ommaviy taklif shartlari bilan tanishishi va roziligini tasdiqlashi kerak.",
+        smsNote:
+          "Foydalanuvchining \"IMAN\" Ommaviy Takliflari shartlari bilan tanishishi va roziligini tasdiqlash SMS tarzida olingan kodni \"IMAN\" platformasiga kiritish orqali amalga oshiriladi.",
+        variantsLead:
+          "Foydalanuvchi tanlagan shartlarga qarab, u bilan tuzilgan bitimga quyidagi \"IMAN\" shartnomalaridan birining shartlari qo'llaniladi:",
+        variants: [
+          "Agar foydalanuvchi tovarlarni 1 oydan 11 oygacha onlayn tarzda nasiyaga sotib olishni xohlasa, 2025 yil 3-fevraldagi 4-sonli \"Oldi-sotdi shartnomasini tuzish bo'yicha Oferta\" (onlayn savdo) shartlari qo'llaniladi.",
+          "Agar foydalanuvchi tovarlarni 1 oydan 11 oygacha oflayn tarzda nasiyaga sotib olishni xohlasa, 2025 yil 3-fevraldagi 4-sonli \"Oldi-sotdi shartnomasini tuzish bo'yicha Oferta\" (oflayn savdo) shartlari qo'llaniladi.",
+          "Agar foydalanuvchi tovarlarni 12 oy yoki undan ko'proq muddatga oflayn tarzda olishni xohlasa, 2025 yil 3-fevraldagi 3-sonli \"Moliyaviy Ijara shaklida tuzilgan shartnoma bo'yicha oferta\" (oflayn) shartlari qo'llaniladi.",
+          "Agar foydalanuvchi tovarlarni 12 oy yoki undan ko'proq muddatga onlayn tarzda olishni xohlasa, 2025 yil 3-fevraldagi 3-sonli \"Moliyaviy Ijara shaklida tuzilgan shartnoma bo'yicha oferta\" (onlayn) shartlari qo'llaniladi.",
+        ],
+        filesNote: "Taklif bilan tanishish uchun siz quyidagi fayllardan biriga o'tishingiz kerak.",
+      },
+      groups: {
+        online: "Onlayn oldi-sotdi shartnomasi (1-11 oylik muddat)",
+        offline: "Oflayn oldi-sotdi shartnomasi (1-11 oylik muddat)",
+      },
     },
     settings: {
       title: "Sozlamalar",
@@ -115,6 +140,31 @@ export const ui = {
       emptyState: "Пока документ не загружен. Поместите файл оферты в public/documents/ и добавьте в список в src/data/documents.js.",
       view: "Просмотреть",
       download: "Скачать",
+      intro: {
+        heading: "Публичная оферта",
+        lead: "Приложение «IMAN» предоставляет пользователям следующие возможности:",
+        bullets: [
+          "Приобретать товары в рассрочку сроком от 1 до 11 месяцев на основании «Оферты на заключение договора купли-продажи» (ОНЛАЙН и ОФЛАЙН);",
+          "Оформив «Оферту по договору финансовой аренды», брать товары в финансовую аренду сроком на 12 месяцев и более с условием уплаты арендных платежей;",
+        ],
+        afterBullets:
+          "Для заключения любой сделки на платформе «IMAN» пользователь должен ознакомиться с условиями публичной оферты, размещённой на данной странице для пользователей «IMAN», и подтвердить своё согласие.",
+        smsNote:
+          "Подтверждение пользователем ознакомления с условиями Публичных оферт «IMAN» и согласия с ними осуществляется путём ввода кода, полученного по SMS, на платформу «IMAN».",
+        variantsLead:
+          "В зависимости от выбранных пользователем условий, к заключённой с ним сделке применяются условия одного из следующих договоров «IMAN»:",
+        variants: [
+          "Если пользователь желает приобрести товары в рассрочку онлайн на срок от 1 до 11 месяцев, применяются условия «Оферты на заключение договора купли-продажи» № 4 от 3 февраля 2025 года (онлайн-продажа).",
+          "Если пользователь желает приобрести товары в рассрочку офлайн на срок от 1 до 11 месяцев, применяются условия «Оферты на заключение договора купли-продажи» № 4 от 3 февраля 2025 года (офлайн-продажа).",
+          "Если пользователь желает получить товары офлайн в финансовую аренду сроком на 12 месяцев и более, применяются условия «Оферты по договору финансовой аренды» № 3 от 3 февраля 2025 года (офлайн).",
+          "Если пользователь желает получить товары онлайн в финансовую аренду сроком на 12 месяцев и более, применяются условия «Оферты по договору финансовой аренды» № 3 от 3 февраля 2025 года (онлайн).",
+        ],
+        filesNote: "Для ознакомления с офертой перейдите к одному из следующих файлов.",
+      },
+      groups: {
+        online: "Договор купли-продажи онлайн (срок 1-11 месяцев)",
+        offline: "Договор купли-продажи офлайн (срок 1-11 месяцев)",
+      },
     },
     settings: {
       title: "Настройки",
