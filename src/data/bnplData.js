@@ -81,8 +81,8 @@ Rassrochka murabaha modeli asosida rasmiylashtiriladi — bu halol sotib olish-s
     id: "b10", category: { uz: "Limit olish", ru: "Получение лимита" },
     q: { uz: "Limit qanday olinadi?", ru: "Как получить лимит?" },
     a: {
-      uz: `1. IMANUM ilovasini Google Play yoki App Store orqali o'rnating. 2. Telefon raqamingizni kiritib ro'yxatdan o'ting. 3. Pasport yoki ID-karta (seriya va raqam yetarli) hamda bank kartangizni yuklang, skoring va Face-ID'dan o'ting. 4. Barcha bosqichlarni bajarganingizdan so'ng 1 000 000 so'mdan 24 000 000 so'mgacha limitga ega bo'lasiz. Limitdan IMAN hamkor do'konlarida xarid qilish uchun foydalaniladi.`,
-      ru: `1. Установите приложение IMANUM через Google Play или App Store. 2. Введите номер телефона и зарегистрируйтесь. 3. Загрузите паспорт или ID-карту (достаточно серии и номера), а также банковскую карту. Пройдите скоринг и обязательную процедуру Face-ID. 4. После завершения всех шагов вы получите лимит от 1 000 000 до 24 000 000 сум. Лимит можно использовать для покупок в партнёрских магазинах IMAN.`,
+      uz: `1. IMANUM ilovasini Google Play yoki App Store orqali o'rnating. 2. Telefon raqamingizni kiritib ro'yxatdan o'ting. 3. Pasport yoki ID-karta (seriya va raqam yetarli) hamda bank kartangizni yuklang, skoring va Face-ID'dan o'ting. 4. Barcha bosqichlarni bajarganingizdan so'ng 1 000 000 so'mdan 50 000 000 so'mgacha limitga ega bo'lasiz. Limitdan IMAN hamkor do'konlarida xarid qilish uchun foydalaniladi.`,
+      ru: `1. Установите приложение IMANUM через Google Play или App Store. 2. Введите номер телефона и зарегистрируйтесь. 3. Загрузите паспорт или ID-карту (достаточно серии и номера), а также банковскую карту. Пройдите скоринг и обязательную процедуру Face-ID. 4. После завершения всех шагов вы получите лимит от 1 000 000 до 50 000 000 сум. Лимит можно использовать для покупок в партнёрских магазинах IMAN.`,
     },
   },
   {
@@ -113,8 +113,8 @@ Rassrochka murabaha modeli asosida rasmiylashtiriladi — bu halol sotib olish-s
     id: "b14", category: { uz: "Limit olish", ru: "Получение лимита" },
     q: { uz: "Limit miqdori nimaga bog'liq?", ru: "От чего зависит размер лимита?" },
     a: {
-      uz: `Limit avtomatik belgilanadi va quyidagilarga bog'liq: 1) ma'lumotlar ishonchliligi va tekshiruvdan muvaffaqiyatli o'tish; 2) bank kartasidagi aylanma tahlili; 3) kredit tarixi; 4) qo'shimcha bank kartasi qo'shish; 5) xizmatdan foydalanish tarixi (o'z vaqtida to'lovlar). Summa 1 000 000 dan 24 000 000 so'mgacha bo'lishi mumkin.`,
-      ru: `Размер лимита определяется автоматически и зависит от: 1) достоверности данных и успешной верификации; 2) анализа оборота на банковской карте; 3) кредитной истории; 4) добавления второй банковской карты; 5) истории использования сервиса (своевременные платежи). Сумма лимита может составлять от 1 000 000 до 24 000 000 сум.`,
+      uz: `Limit avtomatik belgilanadi va quyidagilarga bog'liq: 1) ma'lumotlar ishonchliligi va tekshiruvdan muvaffaqiyatli o'tish; 2) bank kartasidagi aylanma tahlili; 3) kredit tarixi; 4) qo'shimcha bank kartasi qo'shish; 5) xizmatdan foydalanish tarixi (o'z vaqtida to'lovlar). Summa 1 000 000 dan 50 000 000 so'mgacha bo'lishi mumkin.`,
+      ru: `Размер лимита определяется автоматически и зависит от: 1) достоверности данных и успешной верификации; 2) анализа оборота на банковской карте; 3) кредитной истории; 4) добавления второй банковской карты; 5) истории использования сервиса (своевременные платежи). Сумма лимита может составлять от 1 000 000 до 50 000 000 сум.`,
     },
   },
   {
@@ -129,8 +129,8 @@ Rassrochka murabaha modeli asosida rasmiylashtiriladi — bu halol sotib olish-s
     id: "b16", category: { uz: "Limit olish", ru: "Получение лимита" },
     q: { uz: "Limitning maksimal va minimal miqdori qancha?", ru: "Каков минимальный и максимальный размер лимита?" },
     a: {
-      uz: `Minimal limit — 1 000 000 so'm. Maksimal limit — 24 000 000 so'm. Limit tasdiqlangandan keyin o'rnatiladi va xizmatdan foydalanishdagi faollik/mas'uliyatga qarab o'zgarishi mumkin.`,
-      ru: `Минимальный лимит составляет 1 000 000 сум. Максимальный лимит — 24 000 000 сум. Лимит устанавливается после верификации и может меняться в зависимости от вашей активности и ответственности при использовании сервиса.`,
+      uz: `Minimal limit — 1 000 000 so'm. Maksimal limit — 50 000 000 so'm. Limit tasdiqlangandan keyin o'rnatiladi va xizmatdan foydalanishdagi faollik/mas'uliyatga qarab o'zgarishi mumkin.`,
+      ru: `Минимальный лимит составляет 1 000 000 сум. Максимальный лимит — 50 000 000 сум. Лимит устанавливается после верификации и может меняться в зависимости от вашей активности и ответственности при использовании сервиса.`,
     },
   },
   {
