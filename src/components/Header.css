@@ -9,12 +9,45 @@
     align-items: center;
 
     padding: 0 40px;
+    gap: 16px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-surface);
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.menu-btn span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    margin: 0 auto;
+    background: var(--color-text);
+    border-radius: 2px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 14px;
+    min-width: 0;
 }
 
 .logo-mark {
@@ -28,6 +61,7 @@
 .logo-text {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .logo-text h2 {
@@ -35,6 +69,9 @@
     font-size: 19px;
     font-weight: 700;
     letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .logo-text span {
@@ -43,6 +80,9 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header-right {
@@ -95,6 +135,7 @@
 
     font-weight: 700;
     font-size: 15px;
+    flex-shrink: 0;
 }
 
 .profile p {
@@ -102,4 +143,53 @@
     color: var(--color-text);
     font-size: 13px;
     font-weight: 600;
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 900px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .search {
+        width: 180px;
+    }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 560px) {
+    .header {
+        padding: 0 14px;
+        gap: 10px;
+    }
+
+    .logo-mark {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-text span {
+        display: none;
+    }
+
+    .logo-text h2 {
+        font-size: 16px;
+        max-width: 34vw;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .profile p {
+        display: none;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
 }

@@ -10,12 +10,14 @@ import Invest from "./components/Invest";
 import Kvadrat from "./components/Kvadrat";
 import ScriptsPage from "./components/ScriptsPage";
 import OfferPage from "./components/OfferPage";
+import QAFeedback from "./components/QAFeedback";
 import Settings from "./components/Settings";
 
 import "./Layout.css";
 
 function App() {
   const [page, setPage] = useState("dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   function renderPage() {
     switch (page) {
@@ -43,6 +45,9 @@ function App() {
       case "offer":
         return <OfferPage />;
 
+      case "qa":
+        return <QAFeedback />;
+
       case "settings":
         return <Settings />;
 
@@ -53,10 +58,18 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header onMenuClick={() => setSidebarOpen(true)} />
 
       <div className="layout">
-        <Sidebar page={page} setPage={setPage} />
+        <Sidebar
+          page={page}
+          setPage={(key) => {
+            setPage(key);
+            setSidebarOpen(false);
+          }}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+        />
 
         <div className="content">{renderPage()}</div>
       </div>

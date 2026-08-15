@@ -8,4 +8,17 @@
   padding: 36px 40px;
   background: var(--color-bg);
   overflow-y: auto;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .content {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .content {
+    padding: 18px 14px;
+  }
 }

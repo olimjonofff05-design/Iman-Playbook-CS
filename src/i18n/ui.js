@@ -18,6 +18,7 @@ export const ui = {
       kvadrat: "KVADRAT",
       scripts: "Skriptlar",
       offer: "Offer",
+      qa: "QA fikrlari",
       settings: "Sozlamalar",
     },
     dashboard: {
@@ -32,6 +33,7 @@ export const ui = {
       kvadrat: { title: "KVADRAT", desc: "Ko'chmas mulkka investitsiya" },
       scripts: { title: "Skriptlar", desc: "Operator uchun tayyor matnlar" },
       offer: { title: "Offer", desc: "Rasmiy hujjatlar" },
+      qa: { title: "QA fikrlari", desc: "Xato yoki tavsiyangizni yozib qoldiring" },
     },
     common: {
       searchPlaceholder: "Qidirish...",
@@ -45,6 +47,22 @@ export const ui = {
       invest: { icon: "💰", title: "Invest Playbook", subtitle: "Investitsiya mahsuloti bo'yicha savol-javoblar va tushuntirishlar." },
       kvadrat: { icon: "🏢", title: "KVADRAT", subtitle: "Ko'chmas mulkka investitsiya mahsuloti bo'yicha ma'lumotlar." },
       scripts: { icon: "📞", title: "Operator skriptlari", subtitle: "Qo'ng'iroq va yozishmalar uchun tayyor matnlar." },
+      qa: {
+        title: "QA fikrlari",
+        subtitle: "Playbookda topgan xato yoki yangilash kerak bo'lgan joy haqida shu yerdan yozib qoldiring — xabaringiz darhol yetkaziladi.",
+        fullName: "Ism va familiya",
+        fullNamePlaceholder: "Masalan: Aziza Qobulova",
+        department: "Bo'lim",
+        departmentPlaceholder: "Masalan: Call-markaz, BNPL, Invest...",
+        position: "Lavozim",
+        positionPlaceholder: "Masalan: Operator, QA mutaxassisi...",
+        message: "Izoh",
+        messagePlaceholder: "Qayerda xato bor, nimani yangilash yoki qo'shish kerak — batafsil yozing.",
+        submit: "Yuborish",
+        sending: "Yuborilmoqda...",
+        successMsg: "Rahmat! Fikringiz yuborildi.",
+        errorMsg: "Xatolik yuz berdi. Birozdan so'ng qayta urinib ko'ring.",
+      },
     },
     offer: {
       title: "Ommaviy oferta va hujjatlar",
@@ -52,6 +70,36 @@ export const ui = {
       emptyState: "Hozircha hujjat yuklanmagan. Oferta faylini public/documents/ papkasiga joylab, src/data/documents.js faylida ro'yxatga qo'shing.",
       view: "Ko'rish",
       download: "Yuklab olish",
+      pending: "Fayl kutilmoqda",
+      intro: {
+        heading: "Ommaviy oferta",
+        lead: "\"IMAN\" ilovasi foydalanuvchilarga quyidagi imkoniyatlarni taqdim etadi:",
+        bullets: [
+          "Tovarlarni 1 oydan 11 oygacha nasiya savdoga \"Oldi-sotdi shartnomasini tuzish bo'yicha oferta\" (ONLAYN & OFLAYN) asosida sotib olish;",
+          "\"Moliyaviy ijara shaklida tuzilgan shartnoma bo'yicha oferta\"ni tuzish orqali tovarlarni 12 oy yoki undan ko'proq muddatga ijara to'lovlarini to'lash sharti bilan moliyaviy ijaraga olish;",
+        ],
+        afterBullets:
+          "\"IMAN\" platformasida har qanday bitim tuzish uchun foydalanuvchi ushbu sahifada joylashgan \"IMAN\" foydalanuvchilari uchun taqdim etilgan ommaviy taklif shartlari bilan tanishishi va roziligini tasdiqlashi kerak.",
+        smsNote:
+          "Foydalanuvchining \"IMAN\" Ommaviy Takliflari shartlari bilan tanishishi va roziligini tasdiqlash SMS tarzida olingan kodni \"IMAN\" platformasiga kiritish orqali amalga oshiriladi.",
+        variantsLead:
+          "Foydalanuvchi tanlagan shartlarga qarab, u bilan tuzilgan bitimga quyidagi \"IMAN\" shartnomalaridan birining shartlari qo'llaniladi:",
+        variants: [
+          "Agar foydalanuvchi tovarlarni 1 oydan 11 oygacha onlayn tarzda nasiyaga sotib olishni xohlasa, 2025 yil 3-fevraldagi 4-sonli \"Oldi-sotdi shartnomasini tuzish bo'yicha Oferta\" (onlayn savdo) shartlari qo'llaniladi.",
+          "Agar foydalanuvchi tovarlarni 1 oydan 11 oygacha oflayn tarzda nasiyaga sotib olishni xohlasa, 2025 yil 3-fevraldagi 4-sonli \"Oldi-sotdi shartnomasini tuzish bo'yicha Oferta\" (oflayn savdo) shartlari qo'llaniladi.",
+          "Agar foydalanuvchi tovarlarni 12 oy yoki undan ko'proq muddatga oflayn tarzda olishni xohlasa, 2025 yil 3-fevraldagi 3-sonli \"Moliyaviy Ijara shaklida tuzilgan shartnoma bo'yicha oferta\" (oflayn) shartlari qo'llaniladi.",
+          "Agar foydalanuvchi tovarlarni 12 oy yoki undan ko'proq muddatga onlayn tarzda olishni xohlasa, 2025 yil 3-fevraldagi 3-sonli \"Moliyaviy Ijara shaklida tuzilgan shartnoma bo'yicha oferta\" (onlayn) shartlari qo'llaniladi.",
+        ],
+        filesNote: "Taklif bilan tanishish uchun siz quyidagi fayllardan biriga o'tishingiz kerak.",
+      },
+      groups: {
+        online: "Onlayn oldi-sotdi shartnomasi (1-11 oylik muddat)",
+        offline: "Oflayn oldi-sotdi shartnomasi (1-11 oylik muddat)",
+        invest: "Investorlar uchun oferta",
+        "lease-online": "Onlayn Ijara shartnomasi (12+ oy)",
+        "lease-offline": "Oflayn Ijara shartnomasi (12+ oy)",
+        addendum: "Qo'shimcha kelishuvlar",
+      },
     },
     settings: {
       title: "Sozlamalar",
@@ -81,6 +129,7 @@ export const ui = {
       kvadrat: "KVADRAT",
       scripts: "Скрипты",
       offer: "Оферта",
+      qa: "Отзывы QA",
       settings: "Настройки",
     },
     dashboard: {
@@ -95,6 +144,7 @@ export const ui = {
       kvadrat: { title: "KVADRAT", desc: "Инвестиции в недвижимость" },
       scripts: { title: "Скрипты", desc: "Готовые тексты для оператора" },
       offer: { title: "Оферта", desc: "Официальные документы" },
+      qa: { title: "Отзывы QA", desc: "Оставьте отзыв об ошибке или предложении" },
     },
     common: {
       searchPlaceholder: "Поиск...",
@@ -108,6 +158,22 @@ export const ui = {
       invest: { icon: "💰", title: "Invest Playbook", subtitle: "Вопросы и разъяснения по инвестиционному продукту." },
       kvadrat: { icon: "🏢", title: "KVADRAT", subtitle: "Информация о продукте инвестиций в недвижимость." },
       scripts: { icon: "📞", title: "Скрипты оператора", subtitle: "Готовые тексты для звонков и переписки." },
+      qa: {
+        title: "Отзывы QA",
+        subtitle: "Напишите здесь об ошибке в Playbook или о том, что нужно обновить — сообщение будет отправлено сразу.",
+        fullName: "Имя и фамилия",
+        fullNamePlaceholder: "Например: Азиза Кобулова",
+        department: "Отдел",
+        departmentPlaceholder: "Например: Call-центр, BNPL, Invest...",
+        position: "Должность",
+        positionPlaceholder: "Например: Оператор, QA специалист...",
+        message: "Комментарий",
+        messagePlaceholder: "Подробно опишите, где ошибка, что нужно обновить или добавить.",
+        submit: "Отправить",
+        sending: "Отправка...",
+        successMsg: "Спасибо! Ваш отзыв отправлен.",
+        errorMsg: "Произошла ошибка. Попробуйте немного позже.",
+      },
     },
     offer: {
       title: "Публичная оферта и документы",
@@ -115,6 +181,36 @@ export const ui = {
       emptyState: "Пока документ не загружен. Поместите файл оферты в public/documents/ и добавьте в список в src/data/documents.js.",
       view: "Просмотреть",
       download: "Скачать",
+      pending: "Файл ожидается",
+      intro: {
+        heading: "Публичная оферта",
+        lead: "Приложение «IMAN» предоставляет пользователям следующие возможности:",
+        bullets: [
+          "Приобретать товары в рассрочку сроком от 1 до 11 месяцев на основании «Оферты на заключение договора купли-продажи» (ОНЛАЙН и ОФЛАЙН);",
+          "Оформив «Оферту по договору финансовой аренды», брать товары в финансовую аренду сроком на 12 месяцев и более с условием уплаты арендных платежей;",
+        ],
+        afterBullets:
+          "Для заключения любой сделки на платформе «IMAN» пользователь должен ознакомиться с условиями публичной оферты, размещённой на данной странице для пользователей «IMAN», и подтвердить своё согласие.",
+        smsNote:
+          "Подтверждение пользователем ознакомления с условиями Публичных оферт «IMAN» и согласия с ними осуществляется путём ввода кода, полученного по SMS, на платформу «IMAN».",
+        variantsLead:
+          "В зависимости от выбранных пользователем условий, к заключённой с ним сделке применяются условия одного из следующих договоров «IMAN»:",
+        variants: [
+          "Если пользователь желает приобрести товары в рассрочку онлайн на срок от 1 до 11 месяцев, применяются условия «Оферты на заключение договора купли-продажи» № 4 от 3 февраля 2025 года (онлайн-продажа).",
+          "Если пользователь желает приобрести товары в рассрочку офлайн на срок от 1 до 11 месяцев, применяются условия «Оферты на заключение договора купли-продажи» № 4 от 3 февраля 2025 года (офлайн-продажа).",
+          "Если пользователь желает получить товары офлайн в финансовую аренду сроком на 12 месяцев и более, применяются условия «Оферты по договору финансовой аренды» № 3 от 3 февраля 2025 года (офлайн).",
+          "Если пользователь желает получить товары онлайн в финансовую аренду сроком на 12 месяцев и более, применяются условия «Оферты по договору финансовой аренды» № 3 от 3 февраля 2025 года (онлайн).",
+        ],
+        filesNote: "Для ознакомления с офертой перейдите к одному из следующих файлов.",
+      },
+      groups: {
+        online: "Договор купли-продажи онлайн (срок 1-11 месяцев)",
+        offline: "Договор купли-продажи офлайн (срок 1-11 месяцев)",
+        invest: "Оферта для инвесторов",
+        "lease-online": "Договор аренды онлайн (12+ месяцев)",
+        "lease-offline": "Договор аренды офлайн (12+ месяцев)",
+        addendum: "Дополнительные соглашения",
+      },
     },
     settings: {
       title: "Настройки",

@@ -127,33 +127,17 @@ export const scriptsData = [
     id: "s16", category: { uz: "Rassrochka bo'yicha", ru: "По рассрочке" },
     q: { uz: "Raqam almashtirish", ru: "Смена номера телефона" },
     a: {
-      uz: `Shaxsingizni tasdiqlagach, yangi raqamingizni tizimga kiritaman va tasdiqlash kodi yuboraman.`,
-      ru: `После подтверждения личности внесу новый номер в систему и отправлю код подтверждения.`,
+      uz: `Raqamingizni almashtirish uchun ilovadan log out tugmasi orqali profildan chiqing va yangi raqamingizni kiritgan holda My ID tizimidan shaxsingizni tasdiqlang, so'ng tasdiqlash kodi orqali raqamingiz avtomatik tarzda ilovada o'zgaradi.`,
+      ru: `Чтобы сменить номер, выйдите из профиля в приложении через кнопку log out, введите новый номер и подтвердите личность через систему My ID — после этого номер автоматически изменится в приложении по коду подтверждения.`,
     },
   },
 
-  {
-    id: "s17", category: { uz: "Investitsiyalar bo'yicha", ru: "По инвестициям" },
-    q: { uz: "Investitsiyalar qanday ishlaydi", ru: "Как работают инвестиции" },
-    a: {
-      uz: `Umumiy tamoyillarni tushuntirib beraman, biroq aniq mahsulot tavsiya qilish yoki sotib olishga taklif berish huquqim yo'q — bu masalada mutaxassisga yo'naltiraman.`,
-      ru: `Разъясню общие принципы, но не вправе рекомендовать конкретный продукт или предлагать покупку — по этому вопросу направлю к специалисту.`,
-    },
-  },
   {
     id: "s18", category: { uz: "Investitsiyalar bo'yicha", ru: "По инвестициям" },
     q: { uz: "Mablag' yechib olish", ru: "Вывод средств" },
     a: {
       uz: `Yechib olish muddati va umumiy jarayoni bo'yicha ma'lumot beraman, aniq hisob-kitob kerak bo'lsa moliya bo'limiga yo'naltiraman.`,
       ru: `Расскажу об общих сроках и процессе вывода средств, для точного расчёта направлю в финансовый отдел.`,
-    },
-  },
-  {
-    id: "s19", category: { uz: "Investitsiyalar bo'yicha", ru: "По инвестициям" },
-    q: { uz: "Komissiyalar", ru: "Комиссии" },
-    a: {
-      uz: `Standart komissiya stavkalari haqida umumiy ma'lumot bera olaman, sizning aniq holatingiz bo'yicha hisob-kitob uchun moliya bo'limi bilan bog'lab qo'yaman.`,
-      ru: `Могу дать общую информацию по стандартным комиссиям, а для точного расчёта по вашему случаю свяжу с финансовым отделом.`,
     },
   },
 
