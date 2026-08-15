@@ -1,17 +1,19 @@
-import PlaybookSection from "./PlaybookSection";
+import ProductTemplate from "./ProductTemplate";
 import { useLanguage } from "../context/LanguageContext";
 import { icons } from "../icons";
 import { kvadratData } from "../data/kvadratData";
+import { kvadratOverview } from "../data/kvadratOverview";
 
 function Kvadrat() {
   const { t } = useLanguage();
   const Icon = icons.kvadrat;
   return (
-    <PlaybookSection
+    <ProductTemplate
       icon={<Icon size={28} strokeWidth={1.75} />}
       title={t("pages.kvadrat.title")}
       subtitle={t("pages.kvadrat.subtitle")}
-      items={kvadratData}
+      overview={kvadratOverview}
+      faqItems={kvadratData}
     />
   );
 }

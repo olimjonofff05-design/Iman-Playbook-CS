@@ -1,0 +1,122 @@
+.product-page {
+    width: 100%;
+}
+
+.product-meta {
+    margin: 6px 0 4px;
+}
+
+.product-updated {
+    display: inline-block;
+    font-size: 12.5px;
+    color: var(--color-text-muted);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    padding: 5px 12px;
+    border-radius: 999px;
+}
+
+.product-banner {
+    margin: 14px 0 18px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: #fff6e0;
+    border: 1px solid #f0dba0;
+    color: #7a5c00;
+    font-size: 14px;
+    line-height: 1.55;
+    font-weight: 600;
+}
+
+.product-block {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-top: 16px;
+    box-shadow: var(--shadow-soft);
+}
+
+.product-block h2 {
+    margin: 0 0 14px;
+    font-size: 17px;
+    color: var(--color-accent);
+}
+
+.product-block p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--color-text);
+}
+
+.product-list,
+.product-steps {
+    margin: 0;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-list li,
+.product-steps li {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.product-block-restrictions {
+    border-color: #f3c9c9;
+    background: #fff8f8;
+}
+
+.product-block-restrictions h2 {
+    color: #b3261e;
+}
+
+.product-block-faq {
+    padding-bottom: 26px;
+}
+
+.product-faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.product-faq-header h2 {
+    margin: 0;
+}
+
+.product-block-faq .search-box {
+    flex: 1;
+    min-width: 200px;
+    max-width: 320px;
+}
+
+.product-block-faq .category-tabs {
+    margin-bottom: 18px;
+}
+
+.product-block-faq .faq-list {
+    margin-top: 0;
+}
+
+@media (max-width: 640px) {
+    .product-block {
+        padding: 18px 18px;
+    }
+
+    .product-faq-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .product-block-faq .search-box {
+        max-width: none;
+    }
+}

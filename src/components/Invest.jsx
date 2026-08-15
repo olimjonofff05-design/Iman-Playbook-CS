@@ -1,17 +1,19 @@
-import PlaybookSection from "./PlaybookSection";
+import ProductTemplate from "./ProductTemplate";
 import { useLanguage } from "../context/LanguageContext";
 import { icons } from "../icons";
 import { investData } from "../data/investData";
+import { investOverview } from "../data/investOverview";
 
 function Invest() {
   const { t } = useLanguage();
   const Icon = icons.invest;
   return (
-    <PlaybookSection
+    <ProductTemplate
       icon={<Icon size={28} strokeWidth={1.75} />}
       title={t("pages.invest.title")}
       subtitle={t("pages.invest.subtitle")}
-      items={investData}
+      overview={investOverview}
+      faqItems={investData}
     />
   );
 }

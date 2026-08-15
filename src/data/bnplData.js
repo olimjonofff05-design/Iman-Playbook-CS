@@ -201,8 +201,8 @@ Rassrochka murabaha modeli asosida rasmiylashtiriladi — bu halol sotib olish-s
     id: "b25", category: { uz: "Xaridlar va to'lov", ru: "Покупки и оплата" },
     q: { uz: "To'lovni kechiktirsam nima bo'ladi?", ru: "Что будет, если я задержу платёж?" },
     a: {
-      uz: `Kechiktirishda darhol penya yoki jarima undirilmaydi — avval bildirishnoma yuboriladi. Agar to'lov 3 kalendar kun kechiksa, qo'shimcha 3 kun beriladi. Shu muddatda ham to'lanmasa, kompaniya keyingi to'lovlarni talab qilish huquqiga ega. Kechikish ikki marta yoki 45 kunga yetsa, shartnoma bekor qilinib, qolgan qarzning to'liq to'lanishi talab qilinishi va masala sudga oshirilishi mumkin.`,
-      ru: `В случае несвоевременной оплаты вам направляются уведомления о просроченном платеже. После уведомления у вас есть 3 календарных дня на оплату. При невыполнении обязательств в срок компания вправе принимать последующие меры согласно договору, вплоть до расторжения договора, требования полного погашения всей суммы рассрочки и передачи дела в суд.`,
+      uz: `Kechiktirishda darhol penya yoki jarima undirilmaydi — avval bildirishnoma yuboriladi. Agar to'lov 3 kalendar kun kechiksa, qo'shimcha 3 kun beriladi. Shu muddatda ham to'lanmasa, kompaniya keyingi to'lovlarni talab qilish huquqiga ega. Kechikish 90 kunga yetsa, shartnoma bekor qilinib, qolgan qarz umumiy undiruvga o'tkaziladi.`,
+      ru: `В случае несвоевременной оплаты вам направляются уведомления о просроченном платеже. После уведомления у вас есть 3 календарных дня на оплату. При невыполнении обязательств в срок компания вправе принимать последующие меры согласно договору. Если просрочка достигает 90 дней, договор расторгается, а остаток задолженности передаётся в общее взыскание.`,
     },
   },
   {
