@@ -1,17 +1,19 @@
-import PlaybookSection from "./PlaybookSection";
+import ProductTemplate from "./ProductTemplate";
 import { useLanguage } from "../context/LanguageContext";
 import { icons } from "../icons";
 import { bnplData } from "../data/bnplData";
+import { bnplOverview } from "../data/bnplOverview";
 
 function BNPL() {
   const { t } = useLanguage();
   const Icon = icons.bnpl;
   return (
-    <PlaybookSection
+    <ProductTemplate
       icon={<Icon size={28} strokeWidth={1.75} />}
       title={t("pages.bnpl.title")}
       subtitle={t("pages.bnpl.subtitle")}
-      items={bnplData}
+      overview={bnplOverview}
+      faqItems={bnplData}
     />
   );
 }

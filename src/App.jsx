@@ -10,6 +10,7 @@ import Invest from "./components/Invest";
 import Kvadrat from "./components/Kvadrat";
 import ScriptsPage from "./components/ScriptsPage";
 import OfferPage from "./components/OfferPage";
+import QAFeedback from "./components/QAFeedback";
 import Settings from "./components/Settings";
 
 import "./Layout.css";
@@ -43,6 +44,9 @@ function App() {
 
       case "offer":
         return <OfferPage />;
+
+      case "qa":
+        return <QAFeedback />;
 
       case "settings":
         return <Settings />;

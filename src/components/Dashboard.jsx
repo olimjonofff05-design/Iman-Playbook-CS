@@ -2,7 +2,7 @@ import "./Dashboard.css";
 import { useLanguage } from "../context/LanguageContext";
 import { icons } from "../icons";
 
-const CARD_KEYS = ["about", "imanum", "bnpl", "invest", "kvadrat", "scripts", "offer"];
+const CARD_KEYS = ["about", "imanum", "bnpl", "invest", "kvadrat", "scripts", "offer", "qa"];
 
 function Dashboard({ setPage }) {
   const { t } = useLanguage();
