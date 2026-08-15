@@ -8,31 +8,57 @@ import { kvadratOverview } from "../data/kvadratOverview";
 import { imanumOverview } from "../data/imanumOverview";
 import { aboutOverview } from "../data/aboutOverview";
 
+import { bnplData } from "../data/bnplData";
+import { investData } from "../data/investData";
+import { kvadratData } from "../data/kvadratData";
+import { imanumData } from "../data/imanumData";
+import { aboutData } from "../data/aboutData";
+
 import "./PlaybookSection.css";
 import "./ProductTemplate.css";
 import "./PlaybookTabs.css";
 
 // MUHIM: bu yerda hech qanday matn qayta yozilmaydi — har bir mahsulotning
-// overview fayli (bnplOverview.js va h.k.) to'g'ridan-to'g'ri import qilinadi.
-// Shu sababli bu tezkor shpargalka bilan mahsulot sahifasi orasida hech qachon
-// tafovut (расхождение) bo'lmaydi — ikkalasi bitta manbadan o'qiydi.
+// overview va FAQ fayllari (bnplOverview.js, bnplData.js va h.k.) to'g'ridan-to'g'ri
+// import qilinadi. Shu sababli bu tezkor shpargalka bilan mahsulot sahifasi orasida
+// hech qachon tafovut (расхождение) bo'lmaydi — ikkalasi bitta manbadan o'qiydi.
 const PRODUCTS = [
-  { key: "bnpl", overview: bnplOverview },
-  { key: "invest", overview: investOverview },
-  { key: "kvadrat", overview: kvadratOverview },
-  { key: "imanum", overview: imanumOverview },
-  { key: "about", overview: aboutOverview },
+  { key: "bnpl", overview: bnplOverview, faq: bnplData },
+  { key: "invest", overview: investOverview, faq: investData },
+  { key: "kvadrat", overview: kvadratOverview, faq: kvadratData },
+  { key: "imanum", overview: imanumOverview, faq: imanumData },
+  { key: "about", overview: aboutOverview, faq: aboutData },
 ];
 
 function PlaybookTabs() {
   const { language, t } = useLanguage();
   const [active, setActive] = useState(PRODUCTS[0].key);
+  const [faqQuery, setFaqQuery] = useState("");
+  const [openFaqId, setOpenFaqId] = useState(null);
 
   const current = PRODUCTS.find((p) => p.key === active);
   const overview = current.overview;
   const conditions = overview.conditions?.[language] ?? overview.conditions;
   const howItWorks = overview.howItWorks?.[language] ?? overview.howItWorks;
   const restrictions = overview.restrictions?.[language] ?? overview.restrictions;
+
+  const localizedFaq = current.faq.map((item) => ({
+    id: item.id,
+    category: item.category?.[language] ?? item.category,
+    q: item.q?.[language] ?? item.q,
+    a: item.a?.[language] ?? item.a,
+  }));
+
+  const filteredFaq = localizedFaq.filter((item) => {
+    const q = faqQuery.toLowerCase();
+    return item.q.toLowerCase().includes(q) || item.a.toLowerCase().includes(q);
+  });
+
+  function selectTab(key) {
+    setActive(key);
+    setFaqQuery("");
+    setOpenFaqId(null);
+  }
 
   return (
     <div className="playbook-page playbook-tabs-page">
@@ -56,7 +82,7 @@ function PlaybookTabs() {
             <button
               key={p.key}
               className={`playbook-tab-btn ${active === p.key ? "active" : ""}`}
-              onClick={() => setActive(p.key)}
+              onClick={() => selectTab(p.key)}
             >
               <Icon size={16} strokeWidth={1.75} />
               {t(`menu.${p.key}`)}
@@ -105,6 +131,41 @@ function PlaybookTabs() {
           </ul>
         </section>
       )}
+
+      <section className="product-block product-block-faq">
+        <div className="product-faq-header">
+          <h2>{t("common.blockFaq")}</h2>
+          <input
+            className="search-box"
+            type="text"
+            placeholder={t("common.searchPlaceholder")}
+            value={faqQuery}
+            onChange={(e) => setFaqQuery(e.target.value)}
+          />
+        </div>
+
+        {filteredFaq.length === 0 ? (
+          <div className="empty-state">
+            <p>{t("common.emptyState")}</p>
+          </div>
+        ) : (
+          <div className="faq-list">
+            {filteredFaq.map((item) => {
+              const isOpen = openFaqId === item.id;
+              return (
+                <div
+                  key={item.id}
+                  className={`faq-card ${isOpen ? "open" : ""}`}
+                  onClick={() => setOpenFaqId(isOpen ? null : item.id)}
+                >
+                  <h3>{item.q}</h3>
+                  {isOpen ? <p>{item.a}</p> : <p className="faq-preview">{item.a}</p>}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
     </div>
   );
 }

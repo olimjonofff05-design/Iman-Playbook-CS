@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div>
-      <Header onMenuClick={() => setSidebarOpen(true)} />
+      <Header onMenuClick={() => setSidebarOpen(true)} setPage={setPage} />
 
       <div className="layout">
         <Sidebar

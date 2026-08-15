@@ -4,6 +4,7 @@ import { icons } from "../icons";
 
 const MENU_KEYS = [
   "dashboard",
+  "playbookTabs",
   "about",
   "imanum",
   "bnpl",
@@ -11,7 +12,6 @@ const MENU_KEYS = [
   "kvadrat",
   "scripts",
   "offer",
-  "playbookTabs",
   "qa",
   "settings",
 ];
