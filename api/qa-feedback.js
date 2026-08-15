@@ -8,7 +8,7 @@
 //   SUPABASE_URL         - Supabase loyiha URL'i (masalan https://xxxx.supabase.co)
 //   SUPABASE_SERVICE_KEY - Supabase service_role kaliti
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false, error: "Method not allowed" });
     return;
