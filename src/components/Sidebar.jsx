@@ -11,6 +11,7 @@ const MENU_KEYS = [
   "kvadrat",
   "scripts",
   "offer",
+  "playbookTabs",
   "qa",
   "settings",
 ];

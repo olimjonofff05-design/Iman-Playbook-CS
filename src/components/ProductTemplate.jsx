@@ -64,7 +64,17 @@ function ProductTemplate({ icon, title, subtitle, overview, faqItems }) {
             {t("common.lastUpdated")}: {overview.lastUpdated}
           </span>
         )}
+        {overview.validFrom && (
+          <span className="product-updated">
+            {t("common.validFrom")}: {overview.validFrom}
+            {overview.validTo ? ` — ${overview.validTo}` : ""}
+          </span>
+        )}
       </div>
+
+      {overview.validTo && (
+        <div className="product-archived-banner">{t("common.archivedNotice")}</div>
+      )}
 
       {banner && <div className="product-banner">{banner}</div>}
 

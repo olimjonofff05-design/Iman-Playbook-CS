@@ -7,6 +7,7 @@ import {
   Building2,
   Phone,
   FileText,
+  LayoutGrid,
   MessageSquareWarning,
   Settings as SettingsIcon,
 } from "lucide-react";
@@ -21,6 +22,7 @@ export const icons = {
   kvadrat: Building2,
   scripts: Phone,
   offer: FileText,
+  playbookTabs: LayoutGrid,
   qa: MessageSquareWarning,
   settings: SettingsIcon,
 };

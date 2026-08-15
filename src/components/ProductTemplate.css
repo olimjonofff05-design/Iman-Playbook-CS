@@ -4,6 +4,20 @@
 
 .product-meta {
     margin: 6px 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.product-archived-banner {
+    margin: 14px 0 18px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: #f2f2f2;
+    border: 1px solid #d5d5d5;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .product-updated {

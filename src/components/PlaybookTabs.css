@@ -1,0 +1,48 @@
+.playbook-tabs-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 10px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 14px;
+}
+
+.playbook-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.playbook-tab-btn:hover {
+    border-color: var(--color-accent);
+}
+
+.playbook-tab-btn.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+}
+
+.playbook-tabs-page .product-block {
+    margin-top: 18px;
+}
+
+@media (max-width: 640px) {
+    .playbook-tabs-bar {
+        gap: 6px;
+    }
+
+    .playbook-tab-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}

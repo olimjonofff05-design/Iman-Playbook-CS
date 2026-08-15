@@ -10,6 +10,7 @@ import Invest from "./components/Invest";
 import Kvadrat from "./components/Kvadrat";
 import ScriptsPage from "./components/ScriptsPage";
 import OfferPage from "./components/OfferPage";
+import PlaybookTabs from "./components/PlaybookTabs";
 import QAFeedback from "./components/QAFeedback";
 import Settings from "./components/Settings";
 
@@ -44,6 +45,9 @@ function App() {
 
       case "offer":
         return <OfferPage />;
+
+      case "playbookTabs":
+        return <PlaybookTabs />;
 
       case "qa":
         return <QAFeedback />;

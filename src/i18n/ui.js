@@ -18,6 +18,7 @@ export const ui = {
       kvadrat: "KVADRAT",
       scripts: "Skriptlar",
       offer: "Offer",
+      playbookTabs: "Playbook (tezkor)",
       qa: "QA fikrlari",
       settings: "Sozlamalar",
     },
@@ -34,6 +35,7 @@ export const ui = {
       scripts: { title: "Skriptlar", desc: "Operator uchun tayyor matnlar" },
       offer: { title: "Offer", desc: "Rasmiy hujjatlar" },
       qa: { title: "QA fikrlari", desc: "Xato yoki tavsiyangizni yozib qoldiring" },
+      playbookTabs: { title: "Playbook (tezkor)", desc: "Barcha mahsulotlar shartlari bir joyda" },
     },
     common: {
       searchPlaceholder: "Qidirish...",
@@ -45,6 +47,8 @@ export const ui = {
       blockHowItWorks: "3. Qanday ishlaydi",
       blockRestrictions: "4. Cheklovlar va istisnolar",
       blockFaq: "5. Ko'p so'raladigan savollar (FAQ)",
+      validFrom: "Amal qilish muddati",
+      archivedNotice: "Diqqat: bu — eskirgan versiya. Joriy shartlar uchun ushbu mahsulotning yangi (sanasi ko'rsatilgan) sahifasiga qarang.",
     },
     pages: {
       about: { icon: "🕌", title: "IMAN haqida", subtitle: "Kompaniya, uning missiyasi va faoliyati haqida." },
@@ -53,6 +57,10 @@ export const ui = {
       invest: { icon: "💰", title: "Invest Playbook", subtitle: "Investitsiya mahsuloti bo'yicha savol-javoblar va tushuntirishlar." },
       kvadrat: { icon: "🏢", title: "KVADRAT", subtitle: "Ko'chmas mulkka investitsiya mahsuloti bo'yicha ma'lumotlar." },
       scripts: { icon: "📞", title: "Operator skriptlari", subtitle: "Qo'ng'iroq va yozishmalar uchun tayyor matnlar." },
+      playbookTabs: {
+        title: "Playbook — mahsulotlar bo'yicha tezkor shpargalka",
+        subtitle: "Kundalik ish uchun har bir mahsulotning shartlari, jarayoni va cheklovlari — bitta joyda. Mazmun bilim bazasi bilan avtomatik sinxron.",
+      },
       qa: {
         title: "QA fikrlari",
         subtitle: "Playbookda topgan xato yoki yangilash kerak bo'lgan joy haqida shu yerdan yozib qoldiring — xabaringiz darhol yetkaziladi.",
@@ -135,6 +143,7 @@ export const ui = {
       kvadrat: "KVADRAT",
       scripts: "Скрипты",
       offer: "Оферта",
+      playbookTabs: "Playbook (шпаргалка)",
       qa: "Отзывы QA",
       settings: "Настройки",
     },
@@ -151,6 +160,7 @@ export const ui = {
       scripts: { title: "Скрипты", desc: "Готовые тексты для оператора" },
       offer: { title: "Оферта", desc: "Официальные документы" },
       qa: { title: "Отзывы QA", desc: "Оставьте отзыв об ошибке или предложении" },
+      playbookTabs: { title: "Playbook (шпаргалка)", desc: "Условия всех продуктов в одном месте" },
     },
     common: {
       searchPlaceholder: "Поиск...",
@@ -162,6 +172,8 @@ export const ui = {
       blockHowItWorks: "3. Как это работает",
       blockRestrictions: "4. Ограничения и исключения",
       blockFaq: "5. Частые вопросы (FAQ)",
+      validFrom: "Срок действия",
+      archivedNotice: "Внимание: это устаревшая версия. Актуальные условия смотрите на новой (с датой) странице этого продукта.",
     },
     pages: {
       about: { icon: "🕌", title: "Об IMAN", subtitle: "О компании, её миссии и деятельности." },
@@ -170,6 +182,10 @@ export const ui = {
       invest: { icon: "💰", title: "Invest Playbook", subtitle: "Вопросы и разъяснения по инвестиционному продукту." },
       kvadrat: { icon: "🏢", title: "KVADRAT", subtitle: "Информация о продукте инвестиций в недвижимость." },
       scripts: { icon: "📞", title: "Скрипты оператора", subtitle: "Готовые тексты для звонков и переписки." },
+      playbookTabs: {
+        title: "Playbook — быстрая шпаргалка по продуктам",
+        subtitle: "Условия, процесс и ограничения каждого продукта для ежедневной работы — в одном месте. Содержимое автоматически синхронизировано с базой знаний.",
+      },
       qa: {
         title: "Отзывы QA",
         subtitle: "Напишите здесь об ошибке в Playbook или о том, что нужно обновить — сообщение будет отправлено сразу.",
