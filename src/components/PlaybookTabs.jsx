@@ -7,12 +7,14 @@ import { investOverview } from "../data/investOverview";
 import { kvadratOverview } from "../data/kvadratOverview";
 import { imanumOverview } from "../data/imanumOverview";
 import { aboutOverview } from "../data/aboutOverview";
+import { identOverview } from "../data/identOverview";
 
 import { bnplData } from "../data/bnplData";
 import { investData } from "../data/investData";
 import { kvadratData } from "../data/kvadratData";
 import { imanumData } from "../data/imanumData";
 import { aboutData } from "../data/aboutData";
+import { identData } from "../data/identData";
 
 import "./PlaybookSection.css";
 import "./ProductTemplate.css";
@@ -28,6 +30,7 @@ const PRODUCTS = [
   { key: "kvadrat", overview: kvadratOverview, faq: kvadratData },
   { key: "imanum", overview: imanumOverview, faq: imanumData },
   { key: "about", overview: aboutOverview, faq: aboutData },
+  { key: "ident", overview: identOverview, faq: identData },
 ];
 
 function PlaybookTabs() {
