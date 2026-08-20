@@ -9,6 +9,7 @@ import {
   FileText,
   LayoutGrid,
   MessageSquareWarning,
+  ShieldCheck,
   Settings as SettingsIcon,
 } from "lucide-react";
 
@@ -23,6 +24,7 @@ export const icons = {
   scripts: Phone,
   offer: FileText,
   playbookTabs: LayoutGrid,
+  ident: ShieldCheck,
   qa: MessageSquareWarning,
   settings: SettingsIcon,
 };
