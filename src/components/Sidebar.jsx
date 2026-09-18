@@ -10,6 +10,7 @@ const MENU_KEYS = [
   "bnpl",
   "invest",
   "kvadrat",
+  "ident",
   "scripts",
   "offer",
   "qa",

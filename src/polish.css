@@ -1,0 +1,170 @@
+/* ============================================================
+   IMAN Playbook — Vizual sayqal qatlami
+   Bu fayl mavjud komponentlarning klasslariga tegmaydi — faqat
+   ularga silliq animatsiya, o'tish effektlari va mikro-interaksiya
+   qo'shadi. Xavfsiz: hech qanday layout yoki rangni buzmaydi.
+   ============================================================ */
+
+:root {
+    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- Sahifa almashganda yumshoq paydo bo'lish ---- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content > * {
+    animation: fadeInUp 0.4s var(--ease-smooth);
+}
+
+/* ---- Kartalar, bloklar va FAQ uchun silliqroq harakat ---- */
+.card,
+.faq-card,
+.product-block,
+.qa-form,
+.document-card {
+    transition:
+        transform 0.3s var(--ease-smooth),
+        box-shadow 0.3s var(--ease-smooth),
+        border-color 0.3s var(--ease-smooth);
+}
+
+/* ---- Dashboard kartalarining ketma-ket (stagger) paydo bo'lishi ---- */
+.cards .card {
+    animation: fadeInUp 0.5s var(--ease-smooth) backwards;
+}
+.cards .card:nth-child(1) { animation-delay: 0.02s; }
+.cards .card:nth-child(2) { animation-delay: 0.06s; }
+.cards .card:nth-child(3) { animation-delay: 0.1s; }
+.cards .card:nth-child(4) { animation-delay: 0.14s; }
+.cards .card:nth-child(5) { animation-delay: 0.18s; }
+.cards .card:nth-child(6) { animation-delay: 0.22s; }
+.cards .card:nth-child(7) { animation-delay: 0.26s; }
+.cards .card:nth-child(8) { animation-delay: 0.3s; }
+.cards .card:nth-child(9) { animation-delay: 0.34s; }
+.cards .card:nth-child(10) { animation-delay: 0.38s; }
+
+.card-icon {
+    transition: transform 0.3s var(--ease-smooth);
+}
+.card:hover .card-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* ---- Ingichka, IMAN palitrasiga mos scrollbar ---- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 999px;
+    border: 2px solid var(--color-bg);
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+}
+
+/* ---- Fokus holati (accessibility + estetika) ---- */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* ---- Tugmalarga yengil bosilish effekti ---- */
+button {
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.15s var(--ease-smooth);
+}
+button:active {
+    transform: scale(0.97);
+}
+
+/* ---- Sidebar: faol elementga chap tomondan urg'u chizig'i + hover siljish ---- */
+.sidebar li {
+    position: relative;
+    transition: background 0.2s var(--ease-smooth), transform 0.2s var(--ease-smooth);
+}
+.sidebar li.active::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--color-sidebar-active-text);
+}
+.sidebar li:hover {
+    transform: translateX(2px);
+}
+.sidebar li .menu-icon {
+    transition: transform 0.25s var(--ease-smooth), color 0.2s var(--ease-smooth);
+}
+.sidebar li:hover .menu-icon {
+    transform: scale(1.1);
+}
+
+/* ---- Header logotipiga yengil interaktivlik ---- */
+.logo-mark {
+    transition: transform 0.35s var(--ease-smooth);
+}
+.logo:hover .logo-mark {
+    transform: rotate(-4deg) scale(1.06);
+}
+
+/* ---- Qidiruv dropdown ochilish animatsiyasi ---- */
+.search-dropdown {
+    animation: fadeInUp 0.2s var(--ease-smooth);
+}
+.search-result {
+    transition: background 0.15s var(--ease-smooth), padding-left 0.15s var(--ease-smooth);
+}
+.search-result:hover {
+    padding-left: 22px;
+}
+
+/* ---- Tab va kategoriya tugmalari uchun "pop" effekt ---- */
+.category-tabs button,
+.playbook-tab-btn {
+    transition:
+        background 0.2s var(--ease-smooth),
+        color 0.2s var(--ease-smooth),
+        border-color 0.2s var(--ease-smooth),
+        transform 0.15s var(--ease-smooth);
+}
+.category-tabs button:active,
+.playbook-tab-btn:active {
+    transform: scale(0.96);
+}
+
+/* ---- Harakatni kamaytirish afzalligini hurmat qilish ---- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}

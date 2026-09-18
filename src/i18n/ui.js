@@ -35,6 +35,7 @@ export const ui = {
       kvadrat: { title: "KVADRAT", desc: "Ko'chmas mulkka investitsiya" },
       scripts: { title: "Skriptlar", desc: "Operator uchun tayyor matnlar" },
       offer: { title: "Offer", desc: "Rasmiy hujjatlar" },
+      ident: { title: "Identifikatsiya", desc: "Mijozni tasdiqlash tartib-qoidalari" },
       qa: { title: "QA fikrlari", desc: "Xato yoki tavsiyangizni yozib qoldiring" },
       playbookTabs: { title: "Playbook (tezkor)", desc: "Barcha mahsulotlar shartlari bir joyda" },
     },
@@ -61,6 +62,10 @@ export const ui = {
       playbookTabs: {
         title: "Playbook — mahsulotlar bo'yicha tezkor shpargalka",
         subtitle: "Kundalik ish uchun har bir mahsulotning shartlari, jarayoni va cheklovlari — bitta joyda. Mazmun bilim bazasi bilan avtomatik sinxron.",
+      },
+      ident: {
+        title: "Identifikatsiya va uchinchi shaxslarga ma'lumot berish",
+        subtitle: "Mijozni tasdiqlash tartibi — barcha operatorlar uchun majburiy qoidalar.",
       },
       qa: {
         title: "QA fikrlari",
@@ -161,6 +166,7 @@ export const ui = {
       kvadrat: { title: "KVADRAT", desc: "Инвестиции в недвижимость" },
       scripts: { title: "Скрипты", desc: "Готовые тексты для оператора" },
       offer: { title: "Оферта", desc: "Официальные документы" },
+      ident: { title: "Идентификация", desc: "Правила подтверждения личности клиента" },
       qa: { title: "Отзывы QA", desc: "Оставьте отзыв об ошибке или предложении" },
       playbookTabs: { title: "Playbook (шпаргалка)", desc: "Условия всех продуктов в одном месте" },
     },
@@ -187,6 +193,10 @@ export const ui = {
       playbookTabs: {
         title: "Playbook — быстрая шпаргалка по продуктам",
         subtitle: "Условия, процесс и ограничения каждого продукта для ежедневной работы — в одном месте. Содержимое автоматически синхронизировано с базой знаний.",
+      },
+      ident: {
+        title: "Идентификация и предоставление информации третьим лицам",
+        subtitle: "Порядок подтверждения личности клиента — обязательные правила для всех операторов.",
       },
       qa: {
         title: "Отзывы QA",

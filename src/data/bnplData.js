@@ -461,4 +461,114 @@ Rassrochka murabaha modeli asosida rasmiylashtiriladi — bu halol sotib olish-s
       ru: `Да, рассрочка через IMAN влияет на кредитную историю. Своевременные платежи улучшают её, просрочки — ухудшают.`,
     },
   },
+  {
+    id: "b58", category: { uz: "Qaytarish va nizolar", ru: "Возврат и споры" },
+    q: { uz: "Mahsulotni qaytarish (vozvrat) — OFFLINE tartibi qanday?", ru: "Как происходит возврат товара — оффлайн порядок?" },
+    a: {
+      uz: `O'zbekiston Respublikasining "Iste'molchilarning huquqlarini himoya qilish to'g'risida"gi Qonuniga muvofiq, agar mahsulotdan foydalanilmagan, u shikastlanmagan, qadog'i va yorlig'i saqlangan, iste'mol xususiyatlari o'zgarmagan hamda ushbu sotuvchidan xarid qilinganligini tasdiqlovchi asos (chek) mavjud bo'lsa, mijozning mahsulotni almashtirish yoki qaytarish haqidagi talabi qondirilishi lozim.
+
+OFFLINE (hamkor do'konda xarid qilingan bo'lsa) qaytarish tartibi:
+1. Mijoz mahsulotni xarid qilgan (yoki eng yaqin hamkor) do'konga shaxsan boradi.
+2. Do'kondagi qabz-menejerga murojaat qilib, vozvrat aktini yozadi.
+3. Vozvrat akti yozilgandan so'ng, agar mijozdan ushbu shartnoma bo'yicha allaqachon to'lov yechib olingan bo'lsa, u pulni qaytarib olish uchun alohida ariza yozib berishi kerak.
+4. Ariza asosida pul 15 kalendar kun ichida mijozning kartasiga qaytariladi.`,
+      ru: `Согласно Закону Республики Узбекистан "О защите прав потребителей", если товар не использовался, не повреждён, упаковка и ярлык сохранены, потребительские свойства не изменены и имеется подтверждение покупки у данного продавца (чек), требование клиента об обмене или возврате товара должно быть удовлетворено.
+
+Порядок возврата OFFLINE (если покупка сделана в магазине-партнёре):
+1. Клиент лично приходит в магазин, где была совершена покупка (или в ближайший партнёрский магазин).
+2. Обращается к кабз-менеджеру магазина и оформляет акт возврата.
+3. После оформления акта возврата, если по данному договору с клиента уже был списан платёж, он должен написать отдельное заявление на возврат средств.
+4. На основании заявления средства возвращаются на карту клиента в течение 15 календарных дней.`,
+    },
+  },
+  {
+    id: "b59", category: { uz: "Qaytarish va nizolar", ru: "Возврат и споры" },
+    q: { uz: "Mahsulotni qaytarish (vozvrat) — ONLINE tartibi qanday?", ru: "Как происходит возврат товара — онлайн порядок?" },
+    a: {
+      uz: `ONLINE (marketpleys yoki onlayn buyurtma orqali xarid qilingan bo'lsa) qaytarish tartibi:
+1. Mijoz mahsulotni sotgan do'konga (onlayn hamkorga) bog'lanadi.
+2. Do'kon o'zining merchant-adminkasidan vozvrat aktini kiritgan holda ariza qoldiradi.
+3. Ariza IMAN adminkasining "Vozvratlar" bo'limida avtomatik ko'rinadi.
+4. Merchant Care bo'limi arizani 3-5 ish kuni ichida ko'rib chiqadi.
+5. Tasdiqlangach, agar mijozdan to'lov yechib olingan bo'lsa, xuddi OFFLINE jarayondagi kabi, mijoz ariza yozadi va pul 15 kalendar kun ichida qaytariladi.
+
+Ikkala holatda ham pulni qaytarish tizimi va muddati (15 kun) bir xil — farq faqat aktni kim va qayerda kiritishida: OFFLINE'da qabz-menejer joyida, ONLINE'da esa do'konning o'zi merchant-adminka orqali.`,
+      ru: `Порядок возврата ONLINE (если покупка сделана через маркетплейс или онлайн-заказ):
+1. Клиент связывается с магазином, продавшим товар (онлайн-партнёром).
+2. Магазин оформляет заявку в своей мерчант-админке, вносит акт возврата.
+3. Заявка автоматически отображается в разделе "Возвраты" админ-панели IMAN.
+4. Отдел Merchant Care рассматривает заявку в течение 3-5 рабочих дней.
+5. После одобрения, если с клиента уже был списан платёж, он пишет заявление (как и в оффлайн-процессе), и средства возвращаются в течение 15 календарных дней.
+
+В обоих случаях система и срок возврата денег (15 дней) одинаковы — разница только в том, кто и где оформляет акт: в OFFLINE — кабз-менеджер на месте, в ONLINE — сам магазин через мерчант-админку.`,
+    },
+  },
+  {
+    id: "b60", category: { uz: "Unduruv jarayoni (kechikish)", ru: "Процесс взыскания (просрочка)" },
+    q: { uz: "1—30 kun kechikishda (DPD 1-30) qanday amallar bajariladi?", ru: "Какие меры применяются при просрочке 1—30 дней (DPD 1-30)?" },
+    a: {
+      uz: `❗️ Diqqat: Penya, neustoyka va jarimalar mijozdan HECH QACHON olinmaydi — bu haqda operator hech qachon tahdid sifatida gapirmasligi kerak (Oferta 7.8-band).
+
+1—30 kunlik kechikishda (DPD 1-30) quyidagi amallar qo'llaniladi:
+• 3-kundan boshlab: mijozning IMANUM platformasidagi limiti bloklanadi va qarz to'liq yopilmaguncha ochilmaydi (7.4-band).
+• 20-kundan boshlab: xarid qilingan qurilma/mahsulotga texnik blok qo'yiladi yoki uni undirib olish jarayoni boshlanadi; bundan 3 kalendar kun oldin mijozga yozma ogohlantirish yuboriladi (7.5-band).
+• Xarid qilingan mahsulot to'liq to'lov amalga oshirilgunga qadar sotuvchida garov sifatida hisoblanadi (5.1-band).
+• 20-kundan boshlab sotuvchi garovga qo'yilgan mahsulotni qaytarib olishni talab qilishga haqli; qaytarish bilan bog'liq xarajatlar xaridorga yuklatiladi (5.4-band).
+• Har qanday kechikishda mijozga shartnomada belgilangan tartib va muddatlarda to'lash majburiyati eslatiladi (6.3.5-band — asosiy argument sifatida ishlatiladi).`,
+      ru: `❗️ Внимание: пени, неустойка и штрафы с клиента НИКОГДА не взимаются — оператор не должен упоминать их как угрозу (Оферта, п. 7.8).
+
+При просрочке 1—30 дней (DPD 1-30) применяются следующие меры:
+• С 3-го дня: лимит клиента на платформе IMANUM блокируется и не разблокируется до полного погашения долга (п. 7.4).
+• С 20-го дня: на приобретённое устройство/товар накладывается техническая блокировка либо начинается процесс его изъятия; за 3 календарных дня до этого клиенту направляется письменное предупреждение (п. 7.5).
+• До полной оплаты приобретённый товар считается находящимся в залоге у продавца (п. 5.1).
+• С 20-го дня продавец вправе потребовать возврата заложенного товара; расходы по возврату возлагаются на покупателя (п. 5.4).
+• При любой просрочке клиенту напоминают об обязанности платить в порядке и сроки, установленные договором (п. 6.3.5 — используется как базовый аргумент).`,
+    },
+  },
+  {
+    id: "b61", category: { uz: "Unduruv jarayoni (kechikish)", ru: "Процесс взыскания (просрочка)" },
+    q: { uz: "31—60 kun kechikishda (DPD 31-60) qanday amallar bajariladi?", ru: "Какие меры применяются при просрочке 31—60 дней (DPD 31-60)?" },
+    a: {
+      uz: `31—60 kunlik kechikishda (DPD 31-60) quyidagilar qo'shiladi:
+• 45-kundan boshlab: shartnoma bekor qilinishi va qolgan qarzning to'liq to'lanishi talab qilinishi mumkin; kompaniya qarori bilan mijozga 3 oygacha muhlat (otsrochka) berilishi mumkin (7.6 va 3.6.1-bandlar).
+• Mahsulot undirib olingan bo'lsa: mijozdan qolgan qarzni muddatidan oldin to'liq to'lash talab qilinadi; mahsulot bozor narxida sotiladi, sotuvdan tushgan summadan qarz yopiladi, qolgan farq mijozga tegishli bo'lib qoladi (5.6 va 5.8-bandlar).
+• 56-kundan boshlab: agar 7.4—7.6-bandlar bo'yicha choralar natija bermasa, kompaniya sudga murojaat qilish huquqiga ega bo'ladi (7.7-band).
+
+❗️ Bu bosqichda ham penya/jarima tahdid sifatida aytilmaydi — faqat yuqoridagi rasmiy choralar haqida xotirjam xabar beriladi.`,
+      ru: `При просрочке 31—60 дней (DPD 31-60) добавляются:
+• С 45-го дня: договор может быть расторгнут с требованием полного погашения оставшегося долга; по решению компании клиенту может быть предоставлена отсрочка до 3 месяцев (п. 7.6 и 3.6.1).
+• Если товар изъят: с клиента требуется полное досрочное погашение остатка; товар продаётся по рыночной цене, из вырученной суммы гасится долг, оставшаяся разница принадлежит клиенту (п. 5.6 и 5.8).
+• С 56-го дня: если меры по п. 7.4—7.6 не дали результата, у компании появляется право обратиться в суд (п. 7.7).
+
+❗️ На этом этапе пени/штрафы также не упоминаются как угроза — сообщается только о перечисленных официальных мерах, спокойным тоном.`,
+    },
+  },
+  {
+    id: "b62", category: { uz: "Unduruv jarayoni (kechikish)", ru: "Процесс взыскания (просрочка)" },
+    q: { uz: "61—90 kun kechikishda (DPD 61-90) qanday amallar bajariladi?", ru: "Какие меры применяются при просрочке 61—90 дней (DPD 61-90)?" },
+    a: {
+      uz: `61—90 kunlik kechikishda (DPD 61-90):
+• 61-kundan boshlab: ish qarzdorning doimiy yashash manzilidagi tumanlararo (fuqarolik ishlari bo'yicha) sudga da'vo tariqasida yoki notarial ijro yozuvi asosida undirishga oshiriladi (10.2-band).
+• Sud xarajatlari va boshqa harajatlar yutqazgan tomonga, ya'ni qarzdorga yuklatiladi (10.3-band).
+
+Bu bosqichda mijoz bilan muloqot qilinganda, jarayon endi kompaniya ichki tartibidan sud/notarial ijro bosqichiga o'tganini xotirjam va aniq tushuntirish kerak — bu ham tahdid emas, balki oferta shartlariga muvofiq navbatdagi rasmiy qadam sifatida taqdim etiladi.`,
+      ru: `При просрочке 61—90 дней (DPD 61-90):
+• С 61-го дня: дело передаётся в межрайонный суд по месту постоянного жительства должника в качестве иска, либо взыскание производится на основании нотариальной исполнительной надписи (п. 10.2).
+• Судебные расходы и издержки возлагаются на проигравшую сторону, то есть на должника (п. 10.3).
+
+На этом этапе при общении с клиентом нужно спокойно и чётко объяснить, что процесс перешёл из внутреннего порядка компании на этап суда/нотариального взыскания — это также не угроза, а очередной официальный шаг согласно условиям оферты.`,
+    },
+  },
+  {
+    id: "b63", category: { uz: "Unduruv jarayoni (kechikish)", ru: "Процесс взыскания (просрочка)" },
+    q: { uz: "90 kundan ortiq kechikishda (DPD 90+) nima bo'ladi?", ru: "Что происходит при просрочке более 90 дней (DPD 90+)?" },
+    a: {
+      uz: `90 kundan ortiq kechikishda, 61-kundan boshlab boshlangan sud yoki notarial ijro yozuvi asosidagi undiruv jarayoni davom etadi — bu bosqichda ish odatda sudlov yoki ijro instansiyasida ko'rib chiqilmoqda yoki ijro xizmati orqali undirilmoqda bo'ladi. Sud xarajatlari va harajatlari yutqazgan (qarzdor) tomonga yuklanishda davom etadi (10.3-band).
+
+⚠️ Muhim: oferta matnida 90+ kun uchun alohida yangi band ko'rsatilmagan — bu bosqich 61+ kunda boshlangan sud/ijro jarayonining davomi sifatida qaraladi. Aniq holat bo'yicha yuridik bo'lim yoki unduruv rahbariyatiga murojaat qiling.`,
+      ru: `При просрочке более 90 дней продолжается процесс взыскания, начатый с 61-го дня на основании суда или нотариальной исполнительной надписи — на этом этапе дело обычно находится на рассмотрении в суде или взыскивается через исполнительную службу. Судебные расходы и издержки продолжают возлагаться на проигравшую сторону (должника) (п. 10.3).
+
+⚠️ Важно: в тексте оферты для 90+ дней отдельный новый пункт не указан — этот этап рассматривается как продолжение судебного/исполнительного процесса, начатого на 61+ день. По конкретному случаю обращайтесь к юридическому отделу или руководству отдела взыскания.`,
+    },
+  },
 ];

@@ -8,6 +8,7 @@ import Imanum from "./components/Imanum";
 import BNPL from "./components/BNPL";
 import Invest from "./components/Invest";
 import Kvadrat from "./components/Kvadrat";
+import Ident from "./components/Ident";
 import ScriptsPage from "./components/ScriptsPage";
 import OfferPage from "./components/OfferPage";
 import PlaybookTabs from "./components/PlaybookTabs";
@@ -39,6 +40,9 @@ function App() {
 
       case "kvadrat":
         return <Kvadrat />;
+
+      case "ident":
+        return <Ident />;
 
       case "scripts":
         return <ScriptsPage />;
