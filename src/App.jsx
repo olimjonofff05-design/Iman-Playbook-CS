@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import SplashScreen from "./components/SplashScreen";
 import Dashboard from "./components/Dashboard";
 import About from "./components/About";
 import Imanum from "./components/Imanum";
@@ -20,6 +21,7 @@ import "./Layout.css";
 function App() {
   const [page, setPage] = useState("dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [splashDone, setSplashDone] = useState(false);
 
   function renderPage() {
     switch (page) {
@@ -65,23 +67,26 @@ function App() {
   }
 
   return (
-    <div>
-      <Header onMenuClick={() => setSidebarOpen(true)} setPage={setPage} />
+    <>
+      {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
+      <div style={{ opacity: splashDone ? 1 : 0, transition: "opacity 0.4s ease" }}>
+        <Header onMenuClick={() => setSidebarOpen(true)} setPage={setPage} />
 
-      <div className="layout">
-        <Sidebar
-          page={page}
-          setPage={(key) => {
-            setPage(key);
-            setSidebarOpen(false);
-          }}
-          isOpen={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
-        />
+        <div className="layout">
+          <Sidebar
+            page={page}
+            setPage={(key) => {
+              setPage(key);
+              setSidebarOpen(false);
+            }}
+            isOpen={sidebarOpen}
+            onClose={() => setSidebarOpen(false)}
+          />
 
-        <div className="content">{renderPage()}</div>
+          <div className="content">{renderPage()}</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

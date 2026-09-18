@@ -2,6 +2,7 @@ import { useMemo, useState, useRef, useEffect } from "react";
 import "./Header.css";
 import { useLanguage } from "../context/LanguageContext";
 import { searchIndex } from "../data/searchIndex";
+import WhatsNew from "./WhatsNew";
 import logo from "../assets/iman-logo.png";
 
 function Header({ onMenuClick, setPage }) {
@@ -97,6 +98,8 @@ function Header({ onMenuClick, setPage }) {
             </div>
           )}
         </div>
+
+        <WhatsNew />
 
         <div className="profile" title={name}>
           <div className="avatar">{initial}</div>
