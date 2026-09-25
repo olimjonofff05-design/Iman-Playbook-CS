@@ -8,6 +8,7 @@ import About from "./components/About";
 import Imanum from "./components/Imanum";
 import BNPL from "./components/BNPL";
 import Invest from "./components/Invest";
+import InvestCalc from "./components/InvestCalc";
 import Kvadrat from "./components/Kvadrat";
 import Ident from "./components/Ident";
 import ScriptsPage from "./components/ScriptsPage";
@@ -39,6 +40,9 @@ function App() {
 
       case "invest":
         return <Invest />;
+
+      case "investCalc":
+        return <InvestCalc />;
 
       case "kvadrat":
         return <Kvadrat />;

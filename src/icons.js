@@ -11,6 +11,7 @@ import {
   MessageSquareWarning,
   ShieldCheck,
   Settings as SettingsIcon,
+  Calculator,
 } from "lucide-react";
 
 // Har bir bo'lim uchun yagona ikonka — sidebar, dashboard va sahifa sarlavhalarida ishlatiladi
@@ -20,6 +21,7 @@ export const icons = {
   imanum: Smartphone,
   bnpl: ShoppingBag,
   invest: TrendingUp,
+  investCalc: Calculator,
   kvadrat: Building2,
   scripts: Phone,
   offer: FileText,
