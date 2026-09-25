@@ -9,6 +9,7 @@ const MENU_KEYS = [
   "imanum",
   "bnpl",
   "invest",
+  "investCalc",
   "kvadrat",
   "ident",
   "scripts",
