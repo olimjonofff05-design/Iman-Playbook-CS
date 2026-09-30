@@ -10,6 +10,7 @@ const MENU_KEYS = [
   "bnpl",
   "invest",
   "investCalc",
+  "workDays",
   "kvadrat",
   "ident",
   "scripts",
