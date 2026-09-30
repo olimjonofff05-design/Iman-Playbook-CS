@@ -3,6 +3,28 @@
 // pastdagi "Yangiliklar" ro'yxati avtomatik shundan o'qiydi.
 export const changelog = [
   {
+    id: "2026-09-30",
+    date: "30.09.2026",
+    uz: {
+      title: "Ikki yangi kalkulyator + raqam almashtirish tartibi",
+      items: [
+        "Ish kuni kalkulyatori: bayramlarni hisobga olib ish va kalendar kunlarini hisoblaydi (2026-yil farmoni asosida)",
+        "Invest kalkulyator: muddatidan oldin chiqishda beriladigan va ushlab qolinadigan summa",
+        "IMANUM: telefon raqamini almashtirganda eski hisobni yangi raqamga ko'chirish tartibi",
+        "BNPL va Invest: raqam almashtirish bo'yicha javoblar yangilandi",
+      ],
+    },
+    ru: {
+      title: "Два новых калькулятора + порядок смены номера",
+      items: [
+        "Калькулятор рабочих дней: считает рабочие и календарные дни с учётом праздников (по указу на 2026 год)",
+        "Invest калькулятор: сумма к выплате и удержанию при досрочном выходе",
+        "IMANUM: порядок переноса старого аккаунта на новый номер телефона",
+        "BNPL и Invest: обновлены ответы о смене номера",
+      ],
+    },
+  },
+  {
     id: "2026-09-18",
     date: "18.09.2026",
     uz: {

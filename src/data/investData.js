@@ -196,4 +196,12 @@ Diqqat: bank orqali kiritishda qo'shimcha bank komissiyasi olinishi mumkin. Komi
       ru: `Да, можно. Но порядок отличается от частных лиц — инвестиции принимаются не через публичную оферту, а путём подписания договора между компаниями. Для подробностей позвоните по номеру +998 78 113 00 30 или оставьте запрос в разделе «Помощь» в приложении.`,
     },
   },
+  {
+    id: "i20", category: { uz: "Hisob va telefon raqam", ru: "Аккаунт и номер телефона" },
+    q: { uz: "Telefon raqamimni almashtirsam, investitsiyam nima bo'ladi?", ru: "Что будет с моими инвестициями, если я сменю номер телефона?" },
+    a: {
+      uz: `Investitsiyangiz saqlanib qoladi, chunki hisob telefon raqamga emas, JShShIR'ga bog'langan. Yangi raqam bilan ro'yxatdan o'ting va MyID orqali eski profildagi pasport ma'lumotlari bilan shaxsingizni tasdiqlang: investitsiyalaringiz yangi raqamdagi profilga ko'chiriladi. Kartadagi SMS-xabarnoma raqamini ham yangi raqamga o'zgartiring, aks holda kartadan foydalanib bo'lmaydi. Agar yangi raqam ilgari boshqa odam nomida ro'yxatdan o'tgan bo'lsa, qo'shimcha shartlar bor — batafsil: IMANUM ilovasi → «Ro'yxatdan o'tish» bo'limi.`,
+      ru: `Ваши инвестиции сохранятся, так как аккаунт привязан не к номеру телефона, а к ПИНФЛ. Зарегистрируйтесь с новым номером и подтвердите личность через MyID паспортными данными из старого профиля: инвестиции будут перенесены в профиль с новым номером. Также смените номер SMS-информирования на карте, иначе карту нельзя будет использовать. Если новый номер раньше был зарегистрирован на другого человека, действуют дополнительные условия — подробнее: приложение IMANUM → раздел «Регистрация».`,
+    },
+  },
 ];

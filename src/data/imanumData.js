@@ -75,6 +75,26 @@ export const imanumData = [
     },
   },
   {
+    id: "im24", category: { uz: "Ro'yxatdan o'tish", ru: "Регистрация" },
+    q: { uz: "Telefon raqamimni almashtirdim. Eski hisobimni yangi raqamga qanday ko'chiraman?", ru: "Я сменил(а) номер телефона. Как перенести старый аккаунт на новый номер?" },
+    a: {
+      uz: `Alohida ariza berish shart emas. Yangi raqam bilan IMANUM'da ro'yxatdan o'ting va MyID orqali eski profildagi pasport ma'lumotlari bilan shaxsingizni tasdiqlang. Hisob telefon raqamga emas, JShShIR'ga bog'langani uchun tizim sizni taniydi: eski profildagi ma'lumotlar, jumladan muddatli to'lovlar va investitsiyalar, yangi raqamdagi profilga ko'chiriladi.
+
+Muhim shart: agar yangi raqamingiz ilgari boshqa odamga tegishli bo'lgan va u shu raqam bilan IMANUM'da ro'yxatdan o'tgan bo'lsa, siz bu raqam bilan ro'yxatdan o'ta olmaysiz. Raqam faqat ikki holatda bo'shaydi: 1) raqamning avvalgi egasi ilovada o'z raqamini o'zgartirsa; 2) avvalgi egasi raqamni bo'shatishga og'zaki rozilik bersa. Rozilik olingach, dasturchilar raqamni yangi egasining profiliga biriktiradi.
+
+Bu Telegram'dagi username bilan bir xil ishlaydi: username band bo'lsa, eski egasi uni o'zgartirmaguncha yoki bo'shatishga rozilik bermaguncha boshqa odam uni ololmaydi.
+
+Raqam almashgach, bank kartalaringizdagi SMS-xabarnoma raqamini ham yangi raqamga o'zgartiring, aks holda kartalar ilovada to'lov uchun ishlamasligi mumkin.`,
+      ru: `Отдельное заявление не требуется. Зарегистрируйтесь в IMANUM с новым номером и подтвердите личность через MyID паспортными данными из старого профиля. Так как аккаунт привязан не к номеру телефона, а к ПИНФЛ, система вас узнает: данные старого профиля, в том числе рассрочки и инвестиции, будут перенесены в профиль с новым номером.
+
+Важное условие: если ваш новый номер раньше принадлежал другому человеку и он зарегистрирован с этим номером в IMANUM, вы не сможете зарегистрироваться с этим номером. Номер освобождается только в двух случаях: 1) прежний владелец номера сменит его в приложении; 2) прежний владелец даст устное согласие на освобождение номера. После получения согласия разработчики привяжут номер к профилю нового владельца.
+
+Это работает так же, как username в Telegram: если username занят, другой человек не сможет его получить, пока прежний владелец не сменит его или не даст согласие освободить.
+
+После смены номера также обновите номер SMS-информирования на ваших банковских картах, иначе карты могут не работать для платежей в приложении.`,
+    },
+  },
+  {
     id: "im10", category: { uz: "Ro'yxatdan o'tish", ru: "Регистрация" },
     q: { uz: "PIN kod yodimdan chiqqan bo'lsa nima qilishim kerak?", ru: "Я забыл(а) PIN-код — что делать?" },
     a: {
