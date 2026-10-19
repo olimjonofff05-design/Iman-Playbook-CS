@@ -10,3 +10,6 @@ create table if not exists qa_feedback (
 );
 
 create index if not exists idx_qa_feedback_created_at on qa_feedback (created_at desc);
+
+-- Brauzerdan (anon kalit) to'g'ridan-to'g'ri kirishni yopadi; server service_role bilan yozaveradi
+alter table qa_feedback enable row level security;

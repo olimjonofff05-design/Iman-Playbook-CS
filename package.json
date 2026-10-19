@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:api": "node scripts/dev-api.js",
+    "dev:local": "API_PROXY=1 vite"
   },
   "dependencies": {
     "lucide-react": "^1.25.0",

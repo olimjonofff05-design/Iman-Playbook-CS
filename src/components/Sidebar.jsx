@@ -1,5 +1,6 @@
 import "./Sidebar.css";
 import { useLanguage } from "../context/LanguageContext";
+import { useAuth } from "../context/AuthContext";
 import { icons } from "../icons";
 
 const MENU_KEYS = [
@@ -15,12 +16,17 @@ const MENU_KEYS = [
   "ident",
   "scripts",
   "offer",
+  "attestation",
+  "admin",
   "qa",
   "settings",
 ];
 
 function Sidebar({ page, setPage, isOpen = false, onClose }) {
   const { t } = useLanguage();
+  const { isAdmin } = useAuth();
+  // Admin panel faqat admin sifatida kirilganda ko'rinadi
+  const keys = MENU_KEYS.filter((key) => key !== "admin" || isAdmin);
 
   return (
     <>
@@ -43,7 +49,7 @@ function Sidebar({ page, setPage, isOpen = false, onClose }) {
         </div>
 
         <ul>
-          {MENU_KEYS.map((key) => {
+          {keys.map((key) => {
             const Icon = icons[key];
             return (
               <li
