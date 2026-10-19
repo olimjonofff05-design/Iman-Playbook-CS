@@ -1,7 +1,10 @@
 // Interfeys (statik) matnlari — sahifa emas, tugma/sarlavha/label kabi doimiy elementlar
 
+import { attUi } from "./attestation";
+
 export const ui = {
   uz: {
+    att: attUi.uz,
     app: {
       name: "IMAN Playbook",
       subtitle: "Customer Support Portal",
@@ -24,6 +27,8 @@ export const ui = {
       playbookTabs: "Playbook (tezkor)",
       ident: "Identifikatsiya",
       qa: "QA fikrlari",
+      attestation: "Attestatsiya",
+      admin: "Admin panel",
       settings: "Sozlamalar",
     },
     dashboard: {
@@ -42,6 +47,7 @@ export const ui = {
       offer: { title: "Offer", desc: "Rasmiy hujjatlar" },
       ident: { title: "Identifikatsiya", desc: "Mijozni tasdiqlash tartib-qoidalari" },
       qa: { title: "QA fikrlari", desc: "Xato yoki tavsiyangizni yozib qoldiring" },
+      attestation: { title: "Attestatsiya", desc: "Ruxsat bilan ochiladigan bilim imtihonlari" },
       playbookTabs: { title: "Playbook (tezkor)", desc: "Barcha mahsulotlar shartlari bir joyda" },
     },
     common: {
@@ -216,6 +222,7 @@ export const ui = {
   },
 
   ru: {
+    att: attUi.ru,
     app: {
       name: "IMAN Playbook",
       subtitle: "Customer Support Portal",
@@ -238,6 +245,8 @@ export const ui = {
       playbookTabs: "Playbook (шпаргалка)",
       ident: "Идентификация",
       qa: "Отзывы QA",
+      attestation: "Аттестация",
+      admin: "Админ-панель",
       settings: "Настройки",
     },
     dashboard: {
@@ -256,6 +265,7 @@ export const ui = {
       offer: { title: "Оферта", desc: "Официальные документы" },
       ident: { title: "Идентификация", desc: "Правила подтверждения личности клиента" },
       qa: { title: "Отзывы QA", desc: "Оставьте отзыв об ошибке или предложении" },
+      attestation: { title: "Аттестация", desc: "Экзамены по знаниям — вход по доступу" },
       playbookTabs: { title: "Playbook (шпаргалка)", desc: "Условия всех продуктов в одном месте" },
     },
     common: {

@@ -17,6 +17,8 @@ import OfferPage from "./components/OfferPage";
 import PlaybookTabs from "./components/PlaybookTabs";
 import QAFeedback from "./components/QAFeedback";
 import Settings from "./components/Settings";
+import AttestationPage from "./components/attestation/AttestationPage";
+import AdminPanel from "./components/attestation/AdminPanel";
 
 import "./Layout.css";
 
@@ -65,6 +67,12 @@ function App() {
 
       case "qa":
         return <QAFeedback />;
+
+      case "attestation":
+        return <AttestationPage setPage={setPage} />;
+
+      case "admin":
+        return <AdminPanel />;
 
       case "settings":
         return <Settings />;

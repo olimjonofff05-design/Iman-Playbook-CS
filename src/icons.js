@@ -13,6 +13,8 @@ import {
   Settings as SettingsIcon,
   Calculator,
   CalendarDays,
+  ClipboardCheck,
+  UserCog,
 } from "lucide-react";
 
 // Har bir bo'lim uchun yagona ikonka — sidebar, dashboard va sahifa sarlavhalarida ishlatiladi
@@ -30,5 +32,7 @@ export const icons = {
   playbookTabs: LayoutGrid,
   ident: ShieldCheck,
   qa: MessageSquareWarning,
+  attestation: ClipboardCheck,
+  admin: UserCog,
   settings: SettingsIcon,
 };

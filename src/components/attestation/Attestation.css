@@ -1,0 +1,390 @@
+/* Attestatsiya va admin panel — mavjud IMAN palitrasi o'zgaruvchilari asosida */
+
+.att-page {
+  width: 100%;
+  max-width: 980px;
+}
+.att-page-wide {
+  max-width: 1180px;
+}
+
+.att-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.att-page-header h1 {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.att-page-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.att-muted { color: var(--color-text-muted); }
+.att-small { font-size: 13px; }
+.att-mono { font-family: ui-monospace, Consolas, monospace; }
+.att-pre { white-space: pre-wrap; }
+.att-text-danger { color: #b3261e; }
+.att-text-success { color: #1a7f3c; }
+.att-text-danger svg, .att-text-success svg { vertical-align: -3px; }
+
+.att-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---- Tugmalar ---- */
+.att-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.att-btn:hover:not(:disabled) { border-color: var(--color-accent); }
+.att-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.att-btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+.att-btn-primary:hover:not(:disabled) { background: var(--color-accent-hover); }
+.att-btn-success { background: #1a7f3c; border-color: #1a7f3c; color: #fff; }
+.att-btn-success:hover:not(:disabled) { background: #136130; border-color: #136130; }
+.att-btn-ghost { background: transparent; }
+.att-btn-sm { padding: 6px 12px; font-size: 13px; }
+.att-btn-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+.att-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.att-icon-btn:hover:not(:disabled) { background: var(--color-surface-alt); color: var(--color-text); }
+.att-icon-btn.danger:hover:not(:disabled) { color: #b3261e; background: #fdeaea; }
+.att-icon-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* ---- Formalar ---- */
+.att-form { display: flex; flex-direction: column; gap: 16px; }
+.att-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.att-form-row-4 { grid-template-columns: repeat(4, 1fr); }
+.att-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.att-field > span {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+.att-field input,
+.att-field select,
+.att-field textarea,
+.att-textarea,
+.att-table select,
+.att-qedit-tools select,
+.att-btn-row select,
+.att-inline-field input {
+  font: inherit;
+  font-size: 14.5px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text);
+  min-width: 0;
+}
+.att-field textarea, .att-textarea { resize: vertical; width: 100%; line-height: 1.5; }
+.att-field input:focus, .att-field select:focus, .att-field textarea:focus, .att-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+.att-table select, .att-qedit-tools select { padding: 6px 10px; font-size: 13.5px; }
+.att-check { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.att-check input { accent-color: var(--color-accent); }
+.att-inline-field { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-text-muted); font-weight: 600; }
+.att-inline-field input { width: 80px; padding: 6px 8px; }
+
+/* ---- Bildirishnomalar ---- */
+.att-alert { padding: 12px 16px; border-radius: 12px; font-size: 14px; margin: 10px 0; }
+.att-alert-error { background: #fdeaea; color: #b3261e; border: 1px solid #f3bcbc; }
+.att-alert-success { background: #e6f6ec; color: #1a7f3c; border: 1px solid #b7e5c6; }
+.att-alert-info { background: var(--color-accent-soft); color: var(--color-accent-soft-text); border: 1px solid var(--color-border); }
+
+.att-loading { display: flex; align-items: center; gap: 10px; color: var(--color-text-muted); padding: 20px 0; }
+.att-spinner {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid var(--color-border); border-top-color: var(--color-accent);
+  animation: att-spin 0.8s linear infinite;
+}
+@keyframes att-spin { to { transform: rotate(360deg); } }
+
+/* ---- Belgilar ---- */
+.att-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+.att-badge-junior { background: #e3eefb; color: #1d4f91; }
+.att-badge-middle { background: #f3e3f7; color: #6b2a80; }
+.att-badge-warn, .att-status-in_progress, .att-status-review { background: #fff1d6; color: #8a5300; }
+.att-status-granted { background: #e3eefb; color: #1d4f91; }
+.att-status-submitted { background: #e6f6ec; color: #1a7f3c; }
+.att-exam-draft { background: var(--color-surface-alt); color: var(--color-text-muted); }
+.att-exam-active { background: #e6f6ec; color: #1a7f3c; }
+.att-exam-closed { background: #fdeaea; color: #b3261e; }
+
+/* ---- Yopiq holat / login ---- */
+.att-locked { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 10px 0 30px; }
+.att-lock-icon {
+  width: 68px; height: 68px; border-radius: 22px;
+  background: var(--color-sidebar-bg); color: var(--color-sidebar-active-text);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.att-locked h2 { font-size: 22px; margin-bottom: 6px; }
+.att-login-form { width: 100%; max-width: 380px; margin-top: 22px; display: flex; flex-direction: column; gap: 14px; text-align: left; }
+
+.att-session {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  padding: 8px 8px 8px 16px; border-radius: 14px;
+}
+.att-session-name { font-weight: 700; font-size: 14px; }
+
+.att-empty { display: flex; gap: 16px; align-items: flex-start; color: var(--color-text-muted); }
+.att-empty strong { color: var(--color-text); display: block; margin-bottom: 4px; }
+.att-empty .att-btn { margin-top: 14px; }
+
+/* ---- Sarlavha qatorlari, gridlar ---- */
+.att-section-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 26px 0 14px; flex-wrap: wrap;
+}
+.att-section-head h2 { font-size: 18px; }
+.att-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+
+.att-exam-card { display: flex; flex-direction: column; gap: 10px; text-align: left; font: inherit; color: inherit; }
+.att-exam-card h3 { font-size: 17px; }
+.att-exam-card .att-btn { align-self: flex-start; margin-top: 4px; }
+.att-exam-card-top { display: flex; gap: 8px; flex-wrap: wrap; }
+.att-exam-facts { display: flex; gap: 16px; font-size: 13.5px; color: var(--color-text-muted); }
+.att-exam-facts span { display: inline-flex; align-items: center; gap: 5px; }
+.att-clickable { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+.att-clickable:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: var(--color-accent); }
+.att-history-date { margin: 6px 4px 0; }
+
+/* ---- Natija ---- */
+.att-result { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.att-result.compact { margin-bottom: 0; }
+.att-result-title { font-weight: 700; font-size: 16px; }
+.att-result-status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; }
+.att-result-status.pass { color: #1a7f3c; }
+.att-result-status.fail { color: #b3261e; }
+.att-result-status.review, .att-result-status.neutral { color: #8a5300; }
+.att-result-score { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.att-result-score strong { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
+.att-result.compact .att-result-score strong { font-size: 26px; }
+
+/* ---- Imtihon topshirish ---- */
+.att-runner { display: flex; flex-direction: column; gap: 16px; max-width: 820px; }
+.att-runner-bar {
+  position: sticky; top: -36px; z-index: 5;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  background: var(--color-sidebar-bg); color: var(--color-sidebar-text);
+  padding: 14px 20px; border-radius: 16px;
+}
+.att-runner-bar .att-muted { color: var(--color-sidebar-text-muted); }
+.att-runner-title { font-weight: 700; font-size: 16px; }
+.att-timer {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 800;
+  color: var(--color-sidebar-active-text);
+}
+.att-timer-low { color: #ff8a80; animation: att-pulse 1s ease-in-out infinite; }
+@keyframes att-pulse { 50% { opacity: 0.55; } }
+
+.att-qnav { display: flex; flex-wrap: wrap; gap: 6px; }
+.att-qnav-item {
+  width: 36px; height: 36px; border-radius: 10px;
+  border: 1px solid var(--color-border); background: var(--color-surface);
+  font-weight: 700; font-size: 13px; cursor: pointer; color: var(--color-text-muted);
+}
+.att-qnav-item.done { background: var(--color-accent-soft); color: var(--color-accent); border-color: var(--color-accent-soft); }
+.att-qnav-item.current { border-color: var(--color-accent); color: var(--color-accent); box-shadow: 0 0 0 2px var(--color-accent-soft); }
+
+.att-question { display: flex; flex-direction: column; gap: 14px; }
+.att-question-meta { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--color-text-muted); font-weight: 600; flex-wrap: wrap; }
+.att-case {
+  background: var(--color-surface-alt); border-left: 4px solid var(--color-accent);
+  padding: 12px 16px; border-radius: 0 12px 12px 0; white-space: pre-wrap; font-size: 14.5px;
+}
+.att-question-text { font-size: 17px; font-weight: 700; white-space: pre-wrap; }
+.att-options { display: flex; flex-direction: column; gap: 10px; }
+.att-option {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 13px 16px; border-radius: 12px; border: 1px solid var(--color-border);
+  background: #fff; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.att-option:hover { border-color: var(--color-accent); }
+.att-option.checked { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.att-option input { margin-top: 3px; accent-color: var(--color-accent); flex-shrink: 0; }
+.att-runner-actions { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+/* ---- Modal ---- */
+.att-modal-backdrop {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(20, 15, 10, 0.5);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 6vh 16px; overflow-y: auto;
+}
+.att-modal {
+  width: 100%; max-width: 520px; background: var(--color-surface);
+  border-radius: 20px; box-shadow: var(--shadow-hover); animation: fadeInUp 0.2s ease;
+}
+.att-modal-wide { max-width: 860px; }
+.att-modal-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 22px; border-bottom: 1px solid var(--color-border); }
+.att-modal-head h3 { font-size: 17px; }
+.att-modal-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }
+.att-modal-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+
+.att-credentials { display: flex; flex-direction: column; gap: 10px; background: var(--color-surface-alt); padding: 14px 16px; border-radius: 12px; }
+.att-credentials div { display: flex; justify-content: space-between; gap: 12px; }
+.att-credentials span { color: var(--color-text-muted); font-size: 13px; }
+
+/* ---- Admin: tablar, jadvallar ---- */
+.att-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--color-border); margin-bottom: 8px; overflow-x: auto; }
+.att-tabs button {
+  border: none; background: none; padding: 12px 16px; font-size: 14.5px; font-weight: 600;
+  color: var(--color-text-muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px;
+  white-space: nowrap;
+}
+.att-tabs button.active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+
+.att-segment { display: inline-flex; background: var(--color-surface-alt); padding: 4px; border-radius: 999px; gap: 2px; flex-wrap: wrap; }
+.att-segment button { border: none; background: none; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--color-text-muted); cursor: pointer; }
+.att-segment button.active { background: var(--color-surface); color: var(--color-accent); box-shadow: var(--shadow-soft); }
+
+.att-table-wrap { overflow-x: auto; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px; }
+.att-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.att-table th {
+  text-align: left; padding: 12px 14px; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--color-text-muted); background: var(--color-surface-alt); white-space: nowrap;
+}
+.att-table td { padding: 11px 14px; border-top: 1px solid var(--color-border); vertical-align: middle; }
+.att-row-muted td { opacity: 0.55; }
+.att-row-actions { white-space: nowrap; text-align: right; }
+.att-switch { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; }
+.att-switch input { accent-color: var(--color-accent); }
+
+.att-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0 0; }
+.att-stat { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.att-stat span { font-size: 12px; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.att-stat strong { font-size: 22px; }
+
+.att-detail-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.att-detail-title { font-size: 22px; margin: 14px 0 10px; }
+
+/* ---- Savollar muharriri ---- */
+.att-editor { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+.att-editor .att-section-head { margin: 14px 0 0; }
+.att-qedit { display: flex; flex-direction: column; gap: 14px; }
+.att-qedit-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.att-qedit-tools { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.att-opt-list { display: flex; flex-direction: column; gap: 8px; }
+.att-opt-row { display: flex; align-items: center; gap: 10px; padding: 4px 4px 4px 12px; border-radius: 12px; border: 1px solid transparent; }
+.att-opt-row.correct { background: #e6f6ec; border-color: #b7e5c6; }
+.att-opt-row > input[type="radio"], .att-opt-row > input[type="checkbox"] { accent-color: #1a7f3c; width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; }
+.att-opt-input { flex: 1; }
+.att-field .att-btn { align-self: flex-start; }
+.att-add-row { justify-content: center; padding: 6px 0; }
+.att-savebar {
+  position: sticky; bottom: -36px; z-index: 4;
+  display: flex; justify-content: flex-end; align-items: center; gap: 14px; flex-wrap: wrap;
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px;
+  padding: 12px 16px; box-shadow: var(--shadow-hover);
+}
+.att-savebar .att-alert { margin: 0; flex: 1 1 100%; }
+
+/* ---- Ruxsat berish ro'yxati ---- */
+.att-pick-list { display: flex; flex-direction: column; max-height: 50vh; overflow-y: auto; border: 1px solid var(--color-border); border-radius: 12px; }
+.att-pick { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--color-border); cursor: pointer; }
+.att-pick:last-child { border-bottom: none; }
+.att-pick input { accent-color: var(--color-accent); width: 17px; height: 17px; }
+.att-pick.disabled { cursor: default; opacity: 0.6; }
+.att-pick-name { flex: 1; font-weight: 600; }
+
+/* ---- Javoblarni ko'rish ---- */
+.att-attempt-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.att-attempt-summary div { background: var(--color-surface-alt); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+.att-attempt-summary span { font-size: 12px; color: var(--color-text-muted); }
+.att-review-list { display: flex; flex-direction: column; gap: 12px; }
+.att-review-item { border: 1px solid var(--color-border); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; background: #fff; }
+.att-review-item .att-question-text { font-size: 15px; }
+.att-review-head { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; }
+.att-review-head span { display: inline-flex; align-items: center; gap: 5px; font-weight: 700; }
+.att-review-options { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.att-review-options li { padding: 7px 12px; border-radius: 10px; background: var(--color-surface-alt); font-size: 14px; }
+.att-review-options li.correct { background: #e6f6ec; color: #1a5f30; }
+.att-review-options li.wrong { background: #fdeaea; color: #8f1f19; }
+.att-review-mark { margin-right: 8px; }
+.att-open-answer { background: var(--color-surface-alt); padding: 12px 14px; border-radius: 10px; white-space: pre-wrap; font-size: 14.5px; }
+.att-explain { font-size: 13.5px; color: var(--color-accent-soft-text); background: var(--color-accent-soft); padding: 9px 12px; border-radius: 10px; white-space: pre-wrap; }
+.att-explain span { font-weight: 700; }
+
+@media (max-width: 900px) {
+  .att-runner-bar { top: -24px; }
+  .att-savebar { bottom: -24px; }
+}
+
+@media (max-width: 720px) {
+  .att-form-row, .att-form-row-4 { grid-template-columns: 1fr; }
+  .att-stats, .att-attempt-summary { grid-template-columns: 1fr 1fr; }
+  .att-page-header h1 { font-size: 23px; }
+  .att-card { padding: 18px; }
+  .att-timer { font-size: 18px; }
+}
+
+@media (max-width: 560px) {
+  .att-runner-bar { top: -18px; }
+  .att-savebar { bottom: -18px; }
+}
