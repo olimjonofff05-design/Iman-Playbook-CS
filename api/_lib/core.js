@@ -81,7 +81,9 @@ export async function getSession(req) {
   if (!payload) return null;
 
   if (payload.role === "admin") {
-    if (!process.env.ADMIN_LOGIN || payload.login !== process.env.ADMIN_LOGIN) return null;
+    // Login kirishda kichik harflarga o'tkaziladi — bu yerda ham xuddi shunday solishtiramiz
+    const adminLogin = (process.env.ADMIN_LOGIN || "").trim().toLowerCase();
+    if (!adminLogin || payload.login !== adminLogin) return null;
     return { role: "admin", id: "admin", login: payload.login, fullName: "Administrator" };
   }
 
