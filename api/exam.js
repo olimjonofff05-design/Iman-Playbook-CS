@@ -78,6 +78,7 @@ const actions = {
     if (attempt.status === "submitted") throw new HttpError(400, "Bu imtihon allaqachon topshirilgan.");
     if (exam.status !== "active") throw new HttpError(403, "Imtihon hozir yopiq.");
 
+    const resumed = attempt.status === "in_progress";
     if (attempt.status === "granted") {
       const snapshot = buildSnapshot(exam.questions || [], exam.shuffle);
       if (!snapshot.length) throw new HttpError(400, "Imtihonda savollar yo'q.");
@@ -112,6 +113,8 @@ const actions = {
         serverNow: new Date().toISOString(),
         questions: publicQuestions(attempt.questions_snapshot || []),
         answers: attempt.answers || {},
+        tabSwitches: attempt.tab_switches || 0,
+        resumed,
       },
     };
   },

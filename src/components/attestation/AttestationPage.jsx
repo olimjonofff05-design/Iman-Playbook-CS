@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useLanguage } from "../../context/LanguageContext";
 import { icons } from "../../icons";
 import LoginCard from "./LoginCard";
-import ExamRunner from "./ExamRunner";
+import { setLock } from "../../attestation/examLock";
 import ResultCard from "./ResultCard";
 import { Alert, LevelBadge, Spinner } from "./shared";
 import { errorText, fmtDate } from "../../attestation/format";
@@ -50,9 +50,9 @@ function SessionChip() {
 
 function EmployeeHome() {
   const { t } = useLanguage();
+  const { user } = useAuth();
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
-  const [running, setRunning] = useState(null);
 
   const [reloadKey, setReloadKey] = useState(0);
   const load = () => setReloadKey((k) => k + 1);
@@ -66,18 +66,6 @@ function EmployeeHome() {
       })
       .catch((err) => setError(errorText(err, t)));
   }, [reloadKey, t]);
-
-  if (running) {
-    return (
-      <ExamRunner
-        attemptId={running}
-        onExit={() => {
-          setRunning(null);
-          load();
-        }}
-      />
-    );
-  }
 
   return (
     <>
@@ -125,7 +113,7 @@ function EmployeeHome() {
                     </span>
                   </div>
                   {e.status === "granted" && <p className="att-small att-muted">{t("att.page.startWarning")}</p>}
-                  <button className="att-btn att-btn-primary" onClick={() => setRunning(e.attemptId)}>
+                  <button className="att-btn att-btn-primary" onClick={() => setLock({ attemptId: e.attemptId, deadline: e.deadline, userId: user.id })}>
                     {e.status === "in_progress" ? t("att.page.continue") : t("att.page.start")}
                   </button>
                 </div>

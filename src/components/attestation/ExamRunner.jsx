@@ -5,6 +5,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { Alert, Modal, Spinner } from "./shared";
 import { errorText, fmtDuration } from "../../attestation/format";
 import ResultCard from "./ResultCard";
+import { setLock } from "../../attestation/examLock";
 
 const draftKey = (id) => `iman-att-draft-${id}`;
 
@@ -46,11 +47,13 @@ function ExamRunner({ attemptId, onExit }) {
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState(null);
   const [saveState, setSaveState] = useState("idle"); // idle | saving | saved | error
+  const [awayCount, setAwayCount] = useState(0);
 
   const answersRef = useRef(answers);
   const tabSwitchesRef = useRef(0);
   const saveTimer = useRef(null);
   const submittedRef = useRef(false);
+  const flushRef = useRef(null);
 
   // ---- Boshlash / davom ettirish ----
   useEffect(() => {
@@ -66,6 +69,11 @@ function ExamRunner({ attemptId, onExit }) {
         answersRef.current = initial;
         setAnswers(initial);
         setExam({ ...attempt, offset });
+        // Imtihon rejimi: muddat tugaguncha playbook shu brauzerda yopiq turadi
+        setLock({ attemptId, deadline: attempt.deadline });
+        // Sahifani yangilab qaytish ham imtihon oynasidan chiqish sifatida sanaladi
+        tabSwitchesRef.current = (attempt.tabSwitches || 0) + (attempt.resumed ? 1 : 0);
+        setAwayCount(tabSwitchesRef.current);
       })
       .catch((err) => alive && setError(errorText(err, t)));
     return () => {
@@ -82,12 +90,32 @@ function ExamRunner({ attemptId, onExit }) {
   const remaining = exam ? new Date(exam.deadline).getTime() - (now + exam.offset) : 0;
 
   // ---- Boshqa oynaga o'tishlarni sanash ----
+  // Boshqa tab, boshqa dastur yoki boshqa oynaga o'tish bitta "chiqish" sifatida sanaladi
   useEffect(() => {
+    let away = false;
+    function leave() {
+      if (away || submittedRef.current) return;
+      away = true;
+      tabSwitchesRef.current += 1;
+      setAwayCount(tabSwitchesRef.current);
+      // Hisobni darhol serverga yozib qo'yamiz (sahifa yopilsa ham yo'qolmasin)
+      setTimeout(() => flushRef.current?.(), 0);
+    }
+    function back() {
+      away = false;
+    }
     function onVisibility() {
-      if (document.visibilityState === "hidden" && !submittedRef.current) tabSwitchesRef.current += 1;
+      if (document.visibilityState === "hidden") leave();
+      else back();
     }
     document.addEventListener("visibilitychange", onVisibility);
-    return () => document.removeEventListener("visibilitychange", onVisibility);
+    window.addEventListener("blur", leave);
+    window.addEventListener("focus", back);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("blur", leave);
+      window.removeEventListener("focus", back);
+    };
   }, []);
 
   // ---- Sahifani tasodifan yopishdan ogohlantirish ----
@@ -118,6 +146,10 @@ function ExamRunner({ attemptId, onExit }) {
     }
   }, [attemptId]);
 
+  useEffect(() => {
+    flushRef.current = flushSave;
+  }, [flushSave]);
+
   function setAnswer(qid, value) {
     const next = { ...answersRef.current, [qid]: value };
     answersRef.current = next;
@@ -141,6 +173,7 @@ function ExamRunner({ attemptId, onExit }) {
         tabSwitches: tabSwitchesRef.current,
       });
       clearDraft(attemptId);
+      setLock({ attemptId, submitted: true });
       setResult(d.result);
     } catch (err) {
       submittedRef.current = false;
@@ -204,6 +237,12 @@ function ExamRunner({ attemptId, onExit }) {
           {fmtDuration(remaining)}
         </div>
       </div>
+
+      {awayCount > 0 && (
+        <div className="att-alert att-alert-error att-away">
+          {t("att.runner.awayWarning").replace("{n}", awayCount)}
+        </div>
+      )}
 
       <div className="att-qnav">
         {questions.map((qq, i) => (

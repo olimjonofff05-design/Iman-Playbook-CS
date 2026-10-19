@@ -20,6 +20,18 @@ export const attUi = {
       networkError: "Server bilan aloqa yo'q. Internetni tekshirib, qayta urinib ko'ring.",
       unknownError: "Kutilmagan xatolik yuz berdi.",
     },
+    examMode: {
+      title: "Imtihon rejimi",
+      subtitle: "Imtihon tugaguncha playbook yopiq",
+      locked: "Playbook yopiq",
+      loginToContinue: "Sizda davom etayotgan imtihon bor. Davom etish uchun tizimga kiring — imtihon tugaguncha playbook ochilmaydi.",
+      otherTabTitle: "Imtihon boshqa oynada ochiq",
+      otherTabText: "Imtihon davomida playbook barcha oynalarda yopiq. Imtihonni shu oynada davom ettirishingiz mumkin.",
+      continueHere: "Shu oynada davom ettirish",
+      adminTitle: "Bu brauzerda xodimning imtihoni davom etmoqda",
+      adminText: "Qulfni olib tashlasangiz, shu brauzerda playbook ochiladi. Xodimning imtihoni serverda davom etaveradi.",
+      adminUnlock: "Qulfni olib tashlash",
+    },
     levels: { junior: "Junior", middle: "Middle" },
     qtypes: { single: "Bitta javob", multi: "Bir nechta javob", open: "Ochiq javob" },
     status: {
@@ -66,6 +78,7 @@ export const attUi = {
       confirmAll: "Barcha savollarga javob berdingiz.",
       confirmNote: "Yakunlagandan keyin javoblarni o'zgartirib bo'lmaydi.",
       backToList: "Ro'yxatga qaytish",
+      awayWarning: "Diqqat: siz imtihon oynasidan {n} marta chiqdingiz. Har bir chiqish qayd etiladi va administratorga ko'rinadi.",
     },
     result: {
       pass: "O'tdi",
@@ -203,6 +216,18 @@ export const attUi = {
       networkError: "Нет связи с сервером. Проверьте интернет и попробуйте снова.",
       unknownError: "Произошла непредвиденная ошибка.",
     },
+    examMode: {
+      title: "Режим экзамена",
+      subtitle: "Playbook закрыт до окончания экзамена",
+      locked: "Playbook закрыт",
+      loginToContinue: "У вас есть незавершённый экзамен. Войдите, чтобы продолжить — до окончания экзамена playbook недоступен.",
+      otherTabTitle: "Экзамен открыт в другой вкладке",
+      otherTabText: "Во время экзамена playbook закрыт во всех вкладках. Вы можете продолжить экзамен в этой вкладке.",
+      continueHere: "Продолжить в этой вкладке",
+      adminTitle: "В этом браузере идёт экзамен сотрудника",
+      adminText: "Если снять блокировку, playbook откроется в этом браузере. Экзамен сотрудника продолжится на сервере.",
+      adminUnlock: "Снять блокировку",
+    },
     levels: { junior: "Junior", middle: "Middle" },
     qtypes: { single: "Один ответ", multi: "Несколько ответов", open: "Открытый ответ" },
     status: {
@@ -249,6 +274,7 @@ export const attUi = {
       confirmAll: "Вы ответили на все вопросы.",
       confirmNote: "После завершения изменить ответы нельзя.",
       backToList: "Вернуться к списку",
+      awayWarning: "Внимание: вы покидали окно экзамена {n} раз(а). Каждый выход фиксируется и виден администратору.",
     },
     result: {
       pass: "Сдал",
