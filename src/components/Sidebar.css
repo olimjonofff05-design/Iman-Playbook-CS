@@ -5,6 +5,9 @@
     color: var(--color-sidebar-text);
     padding: 24px 16px;
     flex-shrink: 0;
+    /* Menyu bandlari ko'payganda ham hammasi qora fon ichida qoladi va aylantiriladi */
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .sidebar-top {

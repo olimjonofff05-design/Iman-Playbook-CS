@@ -334,7 +334,21 @@
 .att-opt-row { display: flex; align-items: center; gap: 10px; padding: 4px 4px 4px 12px; border-radius: 12px; border: 1px solid transparent; }
 .att-opt-row.correct { background: #e6f6ec; border-color: #b7e5c6; }
 .att-opt-row > input[type="radio"], .att-opt-row > input[type="checkbox"] { accent-color: #1a7f3c; width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; }
-.att-opt-input { flex: 1; }
+.att-opt-input {
+  flex: 1;
+  font: inherit;
+  font-size: 14.5px;
+  line-height: 1.45;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text);
+  resize: vertical;
+  min-width: 0;
+  field-sizing: content; /* zamonaviy brauzerlarda matn uzunligiga qarab o'zi kengayadi */
+}
+.att-opt-input:focus { outline: none; border-color: var(--color-accent); }
 .att-field .att-btn { align-self: flex-start; }
 .att-add-row { justify-content: center; padding: 6px 0; }
 .att-savebar {

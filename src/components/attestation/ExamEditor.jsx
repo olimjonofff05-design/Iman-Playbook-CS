@@ -110,8 +110,9 @@ function QuestionEditor({ q, index, total, onChange, onMove, onRemove, onDuplica
                   onChange={() => toggleCorrect(i)}
                   title={t("att.editor.markCorrect")}
                 />
-                <input
+                <textarea
                   className="att-opt-input"
+                  rows={Math.max(1, Math.ceil(opt.length / 80))}
                   value={opt}
                   placeholder={`${t("att.editor.option")} ${i + 1}`}
                   onChange={(e) => {
