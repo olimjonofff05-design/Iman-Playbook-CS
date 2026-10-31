@@ -6,7 +6,7 @@ import { clearLock, setLock, TAB_ID } from "../../attestation/examLock";
 import ExamRunner from "./ExamRunner";
 import LoginCard from "./LoginCard";
 import { Spinner } from "./shared";
-import logo from "../../assets/iman-logo.png";
+import ImanMark from "../ImanMark";
 import "./Attestation.css";
 
 // Imtihon rejimi: playbookning menyusi, qidiruvi va sahifalari umuman ko'rsatilmaydi.
@@ -79,7 +79,9 @@ function ExamMode({ lock }) {
     <div className="att-exam-mode">
       <header className="att-exam-mode-head">
         <div className="att-exam-mode-brand">
-          <img src={logo} alt="IMAN" />
+          <span className="brand-badge att-exam-mode-logo">
+            <ImanMark size={22} title="IMANUM" />
+          </span>
           <div>
             <strong>{t("att.examMode.title")}</strong>
             <span>{t("att.examMode.subtitle")}</span>

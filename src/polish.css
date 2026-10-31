@@ -158,6 +158,6 @@ button:active {
 #root :is(.qa-form, .settings-form, .calc-card, .att-card) :is(input, textarea, select):focus {
     outline: none;
     border-color: var(--color-accent);
-    background-color: #fff;
+    background-color: var(--color-elevated);
     box-shadow: 0 0 0 4px var(--color-accent-soft);
 }

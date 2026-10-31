@@ -68,7 +68,7 @@
 
 .search-box:focus {
     border-color: var(--color-accent);
-    background-color: #fff;
+    background-color: var(--color-elevated);
     box-shadow: 0 0 0 4px var(--color-accent-soft);
 }
 
@@ -132,7 +132,7 @@
 
 .faq-card.open {
     border-color: var(--color-accent);
-    background: linear-gradient(180deg, #fff 0%, var(--color-surface) 100%);
+    background: linear-gradient(180deg, var(--color-elevated) 0%, var(--color-surface) 100%);
     box-shadow: 0 0 0 3px rgba(122, 52, 35, 0.08), var(--shadow-hover);
 }
 

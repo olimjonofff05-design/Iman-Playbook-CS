@@ -10,7 +10,7 @@
 
 .skeleton {
     border-radius: 14px;
-    background: linear-gradient(90deg, var(--color-surface-alt) 25%, #fff 50%, var(--color-surface-alt) 75%);
+    background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-elevated) 50%, var(--color-surface-alt) 75%);
     background-size: 200% 100%;
     animation: skeletonShimmer 1.4s ease-in-out infinite;
 }

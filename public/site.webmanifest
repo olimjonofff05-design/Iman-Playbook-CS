@@ -1,0 +1,14 @@
+{
+  "name": "IMANUM Playbook",
+  "short_name": "IMANUM",
+  "description": "Mijozlarni qo'llab-quvvatlash bo'limi uchun bilim bazasi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF7F1",
+  "theme_color": "#8A3B25",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

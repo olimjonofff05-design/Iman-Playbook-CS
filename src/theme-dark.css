@@ -1,0 +1,128 @@
+/* ============================================================
+   Tungi rejim — komponentlar uchun aniq sozlashlar.
+   Asosiy ranglar index.css dagi tokenlar orqali o'zgaradi;
+   bu yerda faqat token bilan hal bo'lmaydigan joylar.
+   ============================================================ */
+
+/* Mavzu almashganda silliq o'tish */
+:root[data-theme-switching] *,
+:root[data-theme-switching] *::before,
+:root[data-theme-switching] *::after {
+    transition:
+        background-color 0.45s ease,
+        border-color 0.45s ease,
+        color 0.45s ease,
+        box-shadow 0.45s ease !important;
+}
+
+/* ---- Rangli bo'lim ikonkalari: qorong'i fonda yorqinroq ---- */
+:root[data-theme="dark"] .card-icon,
+:root[data-theme="dark"] .search-result-icon {
+    background: color-mix(in srgb, var(--tint, var(--color-accent)) 22%, var(--color-elevated));
+    color: color-mix(in srgb, var(--tint, var(--color-accent)) 55%, #fff);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tint, var(--color-accent)) 30%, transparent);
+}
+
+:root[data-theme="dark"] .card-count {
+    background: color-mix(in srgb, var(--tint) 20%, transparent);
+    color: color-mix(in srgb, var(--tint) 50%, #fff);
+}
+
+:root[data-theme="dark"] .search-result-page {
+    color: color-mix(in srgb, var(--tint, var(--color-accent)) 55%, #fff);
+}
+
+:root[data-theme="dark"] .card:hover .card-icon {
+    background: var(--tint);
+    color: #fff;
+}
+
+:root[data-theme="dark"] .card::before {
+    background: radial-gradient(280px circle at var(--mx) var(--my),
+        color-mix(in srgb, var(--tint) 24%, transparent), transparent 70%);
+}
+
+:root[data-theme="dark"] .card:hover {
+    border-color: color-mix(in srgb, var(--tint) 45%, var(--color-border));
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 22px 44px -10px color-mix(in srgb, var(--tint) 35%, transparent);
+}
+
+/* ---- Kartalar shishasimon, yulduzlar sal ko'rinib tursin ---- */
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .product-block,
+:root[data-theme="dark"] .faq-card,
+:root[data-theme="dark"] .qa-form,
+:root[data-theme="dark"] .settings-form,
+:root[data-theme="dark"] .calc-card,
+:root[data-theme="dark"] .att-card {
+    background-color: rgba(24, 18, 17, 0.82);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+/* ---- Hero ---- */
+:root[data-theme="dark"] .dashboard-hero {
+    box-shadow:
+        0 24px 60px -14px rgba(212, 108, 62, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Sahifa ikonkalari ---- */
+:root[data-theme="dark"] .page-icon,
+:root[data-theme="dark"] .att-page-icon {
+    box-shadow: 0 8px 24px rgba(212, 108, 62, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* ---- Mahsulot sahifasi bannerlari va bloklari ---- */
+:root[data-theme="dark"] .product-banner {
+    background: linear-gradient(135deg, rgba(217, 154, 30, 0.16), rgba(217, 154, 30, 0.08));
+    border-color: rgba(217, 154, 30, 0.38);
+    color: #F3CF85;
+}
+
+:root[data-theme="dark"] .product-archived-banner {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-border-strong);
+    color: var(--color-text-muted);
+}
+
+:root[data-theme="dark"] .product-block-restrictions {
+    background: linear-gradient(180deg, rgba(199, 57, 46, 0.12), rgba(24, 18, 17, 0.82));
+    border-color: rgba(199, 57, 46, 0.35);
+}
+
+:root[data-theme="dark"] .product-block-restrictions h2 {
+    color: #FF9C92;
+}
+
+:root[data-theme="dark"] .product-block-restrictions .product-list li {
+    background: rgba(199, 57, 46, 0.12);
+}
+
+:root[data-theme="dark"] .product-list li::before {
+    background-color: var(--color-accent);
+}
+
+:root[data-theme="dark"] .product-steps li::before {
+    box-shadow: 0 0 0 4px var(--color-surface), 0 4px 14px rgba(212, 108, 62, 0.35);
+}
+
+/* ---- Ish kuni kalkulyatori ranglari ---- */
+:root[data-theme="dark"] .wd-page {
+    --wd-red: #E5534B;
+    --wd-red-soft: rgba(229, 83, 75, 0.18);
+    --wd-red-soft-text: #FF9C94;
+    --wd-weekend: rgba(255, 255, 255, 0.06);
+    --wd-weekend-text: #9C8A74;
+    --wd-worksat: rgba(52, 168, 98, 0.18);
+    --wd-worksat-text: #7FD9A6;
+}
+
+/* ---- Sidebar va splash allaqachon qorong'i — faqat chuqurroq soya ---- */
+:root[data-theme="dark"] .sidebar {
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme="dark"] .logo-mark {
+    box-shadow: 0 0 0 3px var(--color-surface), 0 0 18px rgba(240, 191, 132, 0.35);
+}

@@ -1,0 +1,160 @@
+/* ============ IMAN = NUR: orqa fon qatlami ============ */
+.sky {
+    --star-color: #D9A45C;
+    --star-glow: rgba(217, 164, 92, 0.55);
+    --star-opacity: 0.55;
+    --mark-color: #8A3B25;
+    --mark-opacity: 0.045;
+    --nur-color: rgba(243, 201, 139, 0.35);
+
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+:root[data-theme="dark"] .sky {
+    --star-color: #FFF4E0;
+    --star-glow: rgba(255, 226, 170, 0.9);
+    --star-opacity: 0.9;
+    --mark-color: #F3C98B;
+    --mark-opacity: 0.07;
+    --nur-color: rgba(236, 154, 108, 0.22);
+}
+
+/* ---- Nur sochuvchi IMAN belgisi (o'ng pastki tomonda) ---- */
+.sky-nur {
+    position: absolute;
+    right: -120px;
+    bottom: -140px;
+    width: 640px;
+    height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sky-nur-glow {
+    position: absolute;
+    inset: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--nur-color), transparent 65%);
+    animation: nurPulse 7s ease-in-out infinite;
+}
+
+/* Belgidan taraluvchi yumshoq nurlar */
+.sky-nur-rays {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-conic-gradient(from 0deg, var(--nur-color) 0deg 3deg, transparent 3deg 22.5deg);
+    -webkit-mask: radial-gradient(circle, #000 18%, transparent 68%);
+    mask: radial-gradient(circle, #000 18%, transparent 68%);
+    opacity: 0.55;
+    animation: nurSpin 120s linear infinite reverse;
+}
+
+.sky-mark {
+    position: relative;
+    color: var(--mark-color);
+    opacity: var(--mark-opacity);
+    animation: nurSpin 90s linear infinite;
+}
+
+@keyframes nurSpin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes nurPulse {
+    0%, 100% { transform: scale(0.92); opacity: 0.7; }
+    50% { transform: scale(1.06); opacity: 1; }
+}
+
+/* ---- Mayda yulduzlar: miltillaydi va sekin yuqoriga suzadi ---- */
+.sky-star {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--star-color);
+    box-shadow: 0 0 6px var(--star-glow);
+    opacity: var(--star-opacity);
+    animation:
+        starTwinkle var(--twinkle) ease-in-out infinite,
+        starDrift var(--drift) ease-in-out infinite alternate;
+}
+
+.sky-sparkle {
+    position: absolute;
+    fill: var(--star-color);
+    filter: drop-shadow(0 0 6px var(--star-glow));
+    opacity: var(--star-opacity);
+    animation:
+        starTwinkle var(--twinkle) ease-in-out infinite,
+        starDrift var(--drift) ease-in-out infinite alternate;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: calc(var(--star-opacity) * 0.25); scale: 0.7; }
+    50% { opacity: var(--star-opacity); scale: 1; }
+}
+
+@keyframes starDrift {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(-40px, -160px) rotate(180deg); }
+}
+
+/* ---- Uchib o'tuvchi meteor (har ~11 soniyada) ---- */
+.sky-meteor {
+    position: absolute;
+    top: 12%;
+    left: 70%;
+    width: 140px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--star-color), transparent);
+    filter: drop-shadow(0 0 6px var(--star-glow));
+    opacity: 0;
+    transform: rotate(-35deg);
+    transform-origin: left center;
+    animation: meteor 11s ease-in 3s infinite;
+}
+
+.sky-meteor-2 {
+    top: 38%;
+    left: 92%;
+    width: 100px;
+    animation-duration: 17s;
+    animation-delay: 9s;
+}
+
+@keyframes meteor {
+    0% { opacity: 0; transform: rotate(-35deg) translateX(0); }
+    2% { opacity: 1; }
+    9% { opacity: 0; transform: rotate(-35deg) translateX(-460px); }
+    100% { opacity: 0; transform: rotate(-35deg) translateX(-460px); }
+}
+
+/* Mobil: yengilroq — kamroq element ko'rinadi */
+@media (max-width: 640px) {
+    .sky-nur {
+        width: 420px;
+        height: 420px;
+        right: -140px;
+        bottom: -120px;
+    }
+
+    .sky-mark {
+        width: 340px;
+        height: 340px;
+    }
+
+    .sky-star:nth-child(2n) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sky * {
+        animation: none !important;
+    }
+}

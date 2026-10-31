@@ -5,7 +5,8 @@ import { useLanguage } from "../context/LanguageContext";
 import { icons } from "../icons";
 import { TINTS } from "../navigation";
 import WhatsNew from "./WhatsNew";
-import logo from "../assets/iman-logo.png";
+import ThemeToggle from "./ThemeToggle";
+import ImanMark from "./ImanMark";
 
 function Header({ onMenuClick, setPage }) {
   const { t, language } = useLanguage();
@@ -82,7 +83,9 @@ function Header({ onMenuClick, setPage }) {
         </button>
 
         <div className="logo" onClick={() => goTo("dashboard")}>
-          <img src={logo} alt="IMAN" className="logo-mark" />
+          <span className="logo-mark brand-badge">
+            <ImanMark size={24} title="IMANUM" />
+          </span>
           <div className="logo-text">
             <h2>{t("app.name")}</h2>
             <span>{t("app.subtitle")}</span>
@@ -140,6 +143,8 @@ function Header({ onMenuClick, setPage }) {
             </div>
           )}
         </div>
+
+        <ThemeToggle />
 
         <WhatsNew />
 

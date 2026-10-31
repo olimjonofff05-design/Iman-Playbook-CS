@@ -104,9 +104,9 @@
     padding: 12px 16px;
     border-radius: 12px;
     font-size: 14px;
-    background: #fdeaea;
-    color: #b3261e;
-    border: 1px solid #f3bcbc;
+    background: var(--danger-bg);
+    color: var(--danger-fg);
+    border: 1px solid var(--danger-border);
 }
 
 /* Natijalar */
@@ -136,17 +136,17 @@
 }
 
 .calc-result-give {
-    background: #e6f6ec;
-    border-color: #b7e5c6;
+    background: var(--success-bg);
+    border-color: var(--success-border);
 }
 
 .calc-result-keep {
-    background: #fdf0e3;
-    border-color: #f1cfa6;
+    background: var(--warn-bg);
+    border-color: var(--warn-border);
 }
 
-.calc-result-give strong { color: #1a7f3c; }
-.calc-result-keep strong { color: #a2521a; }
+.calc-result-give strong { color: var(--success-fg); }
+.calc-result-keep strong { color: var(--warn-fg); }
 
 .calc-percent {
     margin-top: 22px;
