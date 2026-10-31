@@ -167,3 +167,33 @@ button:active {
         transition-duration: 0.001ms !important;
     }
 }
+
+/* ---- Asosiy (primary) tugmalar: yagona gradient uslub ---- */
+.save-btn,
+.qa-submit,
+.att-btn-primary,
+.playbook-tab-btn.active {
+    background: var(--gradient-accent);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(122, 52, 35, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.save-btn:hover,
+.qa-submit:hover:not(:disabled),
+.att-btn-primary:hover:not(:disabled) {
+    background: var(--gradient-accent);
+    filter: brightness(1.08);
+    box-shadow: 0 10px 22px rgba(122, 52, 35, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Forma maydonlari: yagona fokus holati ---- */
+.qa-form input:focus,
+.qa-form textarea:focus,
+.settings-form input:focus,
+.settings-form select:focus,
+.calc-card input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px var(--color-accent-soft);
+}

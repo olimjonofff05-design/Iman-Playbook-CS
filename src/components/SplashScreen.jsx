@@ -36,6 +36,7 @@ function SplashScreen({ onDone }) {
         <span>IMAN</span>
         <span className="splash-text-accent">Playbook</span>
       </div>
+      <div className="splash-bar" />
     </div>
   );
 }

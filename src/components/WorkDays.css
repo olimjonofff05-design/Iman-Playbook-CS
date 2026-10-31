@@ -10,27 +10,6 @@
     max-width: 1080px;
 }
 
-.wd-page .page-header h1 {
-    margin: 0;
-    font-size: 28px;
-    color: var(--color-text);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.wd-page .page-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    background: var(--color-accent-soft);
-    color: var(--color-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
 .wd-page .page-subtitle {
     color: var(--color-text-muted);
     margin: 8px 0 22px;

@@ -18,10 +18,12 @@ function Settings() {
 
   return (
     <div className="settings-page">
-      <h1>
-        <Icon size={26} strokeWidth={1.75} className="page-icon" />
-        {t("settings.title")}
-      </h1>
+      <div className="page-header">
+        <h1>
+          <span className="page-icon"><Icon size={26} strokeWidth={1.75} /></span>
+          {t("settings.title")}
+        </h1>
+      </div>
       <p className="page-subtitle">{t("settings.subtitle")}</p>
 
       <form className="settings-form" onSubmit={handleSave}>

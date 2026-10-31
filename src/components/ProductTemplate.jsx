@@ -163,6 +163,15 @@ function ProductTemplate({ icon, title, subtitle, overview, faqItems }) {
                   key={item.id}
                   className={`faq-card ${isOpen ? "open" : ""}`}
                   onClick={() => setOpenId(isOpen ? null : item.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isOpen}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      e.currentTarget.click();
+                    }
+                  }}
                 >
                   <h3>{item.q}</h3>
                   {isOpen ? (
