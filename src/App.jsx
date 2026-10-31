@@ -1,24 +1,27 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import SplashScreen from "./components/SplashScreen";
-import Dashboard from "./components/Dashboard";
-import About from "./components/About";
-import Imanum from "./components/Imanum";
-import BNPL from "./components/BNPL";
-import Invest from "./components/Invest";
-import InvestCalc from "./components/InvestCalc";
-import WorkDays from "./components/WorkDays";
-import Kvadrat from "./components/Kvadrat";
-import Ident from "./components/Ident";
-import ScriptsPage from "./components/ScriptsPage";
-import OfferPage from "./components/OfferPage";
-import PlaybookTabs from "./components/PlaybookTabs";
-import QAFeedback from "./components/QAFeedback";
-import Settings from "./components/Settings";
-import AttestationPage from "./components/attestation/AttestationPage";
-import AdminPanel from "./components/attestation/AdminPanel";
+import PageLoader from "./components/PageLoader";
+
+// Har bir sahifa alohida yuklanadi — birinchi ochilish tezroq bo'ladi
+const Dashboard = lazy(() => import("./components/Dashboard"));
+const About = lazy(() => import("./components/About"));
+const Imanum = lazy(() => import("./components/Imanum"));
+const BNPL = lazy(() => import("./components/BNPL"));
+const Invest = lazy(() => import("./components/Invest"));
+const InvestCalc = lazy(() => import("./components/InvestCalc"));
+const WorkDays = lazy(() => import("./components/WorkDays"));
+const Kvadrat = lazy(() => import("./components/Kvadrat"));
+const Ident = lazy(() => import("./components/Ident"));
+const ScriptsPage = lazy(() => import("./components/ScriptsPage"));
+const OfferPage = lazy(() => import("./components/OfferPage"));
+const PlaybookTabs = lazy(() => import("./components/PlaybookTabs"));
+const QAFeedback = lazy(() => import("./components/QAFeedback"));
+const Settings = lazy(() => import("./components/Settings"));
+const AttestationPage = lazy(() => import("./components/attestation/AttestationPage"));
+const AdminPanel = lazy(() => import("./components/attestation/AdminPanel"));
 import ExamMode from "./components/attestation/ExamMode";
 import { useExamLock, TAB_ID, setLock, getLock } from "./attestation/examLock";
 import { useAuth } from "./context/AuthContext";
@@ -151,7 +154,9 @@ function App() {
           />
 
           <main className="content" ref={contentRef}>
-            <div key={page}>{renderPage()}</div>
+            <div key={page}>
+              <Suspense fallback={<PageLoader />}>{renderPage()}</Suspense>
+            </div>
           </main>
         </div>
       </div>

@@ -2,31 +2,17 @@ import "./Sidebar.css";
 import { useLanguage } from "../context/LanguageContext";
 import { useAuth } from "../context/AuthContext";
 import { icons } from "../icons";
-
-const MENU_KEYS = [
-  "dashboard",
-  "playbookTabs",
-  "about",
-  "imanum",
-  "bnpl",
-  "invest",
-  "investCalc",
-  "workDays",
-  "kvadrat",
-  "ident",
-  "scripts",
-  "offer",
-  "attestation",
-  "admin",
-  "qa",
-  "settings",
-];
+import { NAV_GROUPS } from "../navigation";
+import logo from "../assets/iman-logo.png";
 
 function Sidebar({ page, setPage, isOpen = false, onClose }) {
   const { t } = useLanguage();
   const { isAdmin } = useAuth();
   // Admin panel faqat admin sifatida kirilganda ko'rinadi
-  const keys = MENU_KEYS.filter((key) => key !== "admin" || isAdmin);
+  const groups = NAV_GROUPS.map((g) => ({
+    ...g,
+    items: g.items.filter((key) => key !== "admin" || isAdmin),
+  }));
 
   return (
     <>
@@ -37,7 +23,10 @@ function Sidebar({ page, setPage, isOpen = false, onClose }) {
 
       <nav className={`sidebar ${isOpen ? "open" : ""}`} aria-label="Menu">
         <div className="sidebar-top">
-          <h3>Menu</h3>
+          <div className="sidebar-brand">
+            <img src={logo} alt="" />
+            <span>IMAN Playbook</span>
+          </div>
           <button
             type="button"
             className="sidebar-close"
@@ -48,30 +37,35 @@ function Sidebar({ page, setPage, isOpen = false, onClose }) {
           </button>
         </div>
 
-        <ul>
-          {keys.map((key) => {
-            const Icon = icons[key];
-            return (
-              <li
-                key={key}
-                className={page === key ? "active" : ""}
-                role="button"
-                tabIndex={0}
-                aria-current={page === key ? "page" : undefined}
-                onClick={() => setPage(key)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setPage(key);
-                  }
-                }}
-              >
-                <Icon size={18} strokeWidth={1.75} className="menu-icon" />
-                <span>{t(`menu.${key}`)}</span>
-              </li>
-            );
-          })}
-        </ul>
+        {groups.map((group) => (
+          <div key={group.key} className="sidebar-group">
+            <h3>{t(`menuGroups.${group.key}`)}</h3>
+            <ul>
+              {group.items.map((key) => {
+                const Icon = icons[key];
+                return (
+                  <li
+                    key={key}
+                    className={page === key ? "active" : ""}
+                    role="button"
+                    tabIndex={0}
+                    aria-current={page === key ? "page" : undefined}
+                    onClick={() => setPage(key)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setPage(key);
+                      }
+                    }}
+                  >
+                    <Icon size={18} strokeWidth={1.8} className="menu-icon" />
+                    <span>{t(`menu.${key}`)}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
 
         <div className="sidebar-footer">{t("app.owner")}</div>
       </nav>

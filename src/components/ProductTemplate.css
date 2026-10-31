@@ -199,7 +199,7 @@
     top: 30px;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #D9BF95, var(--color-border));
+    background: linear-gradient(180deg, var(--color-border-strong), var(--color-border));
 }
 
 /* Cheklovlar bloki */

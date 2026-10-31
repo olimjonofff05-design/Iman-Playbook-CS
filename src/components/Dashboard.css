@@ -2,96 +2,219 @@
     width: 100%;
 }
 
-/* ---- Hero ---- */
+/* ================= Hero ================= */
 .dashboard-hero {
     position: relative;
+    isolation: isolate;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    padding: 34px 38px;
-    border-radius: 24px;
-    background: var(--gradient-accent);
+    gap: 32px;
+    padding: 38px 42px;
+    border-radius: 28px;
+    background: linear-gradient(125deg, #B4562F 0%, #8A3B25 38%, #5A2214 72%, #3D160C 100%);
     color: #fff;
-    box-shadow: 0 18px 40px rgba(90, 36, 22, 0.25);
+    box-shadow:
+        0 24px 50px -12px rgba(110, 45, 25, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-.dashboard-hero::before,
-.dashboard-hero::after {
-    content: "";
+/* Suzib yuruvchi yorug'lik dog'lari */
+.hero-glow {
     position: absolute;
+    z-index: -1;
     border-radius: 50%;
+    filter: blur(10px);
     pointer-events: none;
 }
 
-.dashboard-hero::before {
-    width: 340px;
-    height: 340px;
-    right: -80px;
-    top: -140px;
-    background: radial-gradient(circle, rgba(231, 183, 126, 0.35), transparent 65%);
+.hero-glow-1 {
+    width: 420px;
+    height: 420px;
+    right: -60px;
+    top: -200px;
+    background: radial-gradient(circle, rgba(243, 201, 139, 0.55), transparent 65%);
+    animation: heroFloat 12s ease-in-out infinite;
 }
 
-.dashboard-hero::after {
-    width: 260px;
-    height: 260px;
-    left: -90px;
-    bottom: -170px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+.hero-glow-2 {
+    width: 360px;
+    height: 360px;
+    left: 18%;
+    bottom: -240px;
+    background: radial-gradient(circle, rgba(255, 140, 90, 0.35), transparent 65%);
+    animation: heroFloat 15s ease-in-out infinite reverse;
+}
+
+@keyframes heroFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 24px) scale(1.08); }
+}
+
+/* Nozik nuqtali naqsh */
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+    background-size: 22px 22px;
+    -webkit-mask-image: linear-gradient(100deg, transparent 30%, #000 75%);
+    mask-image: linear-gradient(100deg, transparent 30%, #000 75%);
 }
 
 .dashboard-hero-text {
-    position: relative;
-    z-index: 1;
     min-width: 0;
 }
 
 .dashboard-hero-eyebrow {
-    display: inline-block;
-    margin-bottom: 12px;
-    padding: 5px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 6px 14px 6px 10px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #F5D9B3;
-    font-size: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: #FBE3C2;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+}
+
+.hero-wave {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: heroWave 2.4s ease-in-out 0.6s 2;
+}
+
+@keyframes heroWave {
+    0%, 60%, 100% { transform: rotate(0); }
+    10%, 30% { transform: rotate(16deg); }
+    20%, 40% { transform: rotate(-8deg); }
 }
 
 .dashboard-hero h1 {
     color: #fff;
-    font-size: 32px;
+    font-size: 34px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.15);
 }
 
 .dashboard-hero p {
     margin-top: 10px;
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15.5px;
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.hero-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 9px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.hero-stat strong {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-stat span {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Logo atrofida aylanuvchi halqa */
+.dashboard-hero-logo-wrap {
+    position: relative;
+    width: 116px;
+    height: 116px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 0 55%, rgba(243, 201, 139, 0.9) 80%, transparent 100%);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+    animation: heroSpin 6s linear infinite;
+}
+
+@keyframes heroSpin {
+    to { transform: rotate(360deg); }
 }
 
 .dashboard-hero-logo {
-    position: relative;
-    z-index: 1;
     width: 88px;
     height: 88px;
     border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1), 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* ---- Kartalar ---- */
+/* ================= Guruhlar ================= */
+.dash-group {
+    margin-top: 34px;
+}
+
+.dash-group-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.dash-group-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-border-strong), transparent);
+}
+
+/* ================= Kartalar ================= */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 18px;
-    margin-top: 28px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 1100px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .card {
+    --tint: var(--color-accent);
+    --mx: 50%;
+    --my: 0%;
     position: relative;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -106,23 +229,41 @@
     box-shadow: var(--shadow-soft);
     cursor: pointer;
     overflow: hidden;
+    animation: fadeInUp 0.55s var(--ease-smooth) backwards;
 }
 
+/* Sichqoncha ortidan yuruvchi rangli yorug'lik */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(260px circle at var(--mx) var(--my),
+        color-mix(in srgb, var(--tint) 13%, transparent), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Yuqoridagi rangli chiziq */
 .card::after {
     content: "";
     position: absolute;
     inset: 0 0 auto 0;
     height: 3px;
-    background: var(--gradient-accent);
+    background: linear-gradient(90deg, var(--tint), color-mix(in srgb, var(--tint) 40%, #F3C98B));
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.35s var(--ease-smooth, ease);
+    transition: transform 0.4s var(--ease-smooth);
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
-    border-color: #D9BF95;
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--tint) 30%, var(--color-border));
+    box-shadow: 0 2px 6px rgba(60, 35, 20, 0.04), 0 20px 40px -8px color-mix(in srgb, var(--tint) 22%, transparent);
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .card:hover::after {
@@ -131,6 +272,12 @@
 
 .card:active {
     transform: translateY(-1px) scale(0.99);
+}
+
+.card:focus-visible {
+    outline: none;
+    border-color: var(--tint);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--tint) 18%, transparent);
 }
 
 .card-top {
@@ -142,31 +289,44 @@
 }
 
 .card-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: var(--radius-md);
-    background: var(--color-accent-soft);
-    color: var(--color-accent);
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: color-mix(in srgb, var(--tint) 11%, #fff);
+    color: var(--tint);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.25s, color 0.25s;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tint) 14%, transparent);
+    transition: background 0.3s, color 0.3s, transform 0.35s var(--ease-smooth), box-shadow 0.3s;
 }
 
 .card:hover .card-icon {
-    background: var(--color-accent);
+    background: var(--tint);
     color: #fff;
+    transform: scale(1.06) rotate(-4deg);
+    box-shadow: 0 8px 18px -4px color-mix(in srgb, var(--tint) 55%, transparent);
+}
+
+.card-count {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--tint) 9%, #fff);
+    color: var(--tint);
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .card-arrow {
     color: var(--color-text-muted);
-    opacity: 0.5;
-    transition: transform 0.3s var(--ease-smooth, ease), opacity 0.3s, color 0.3s;
+    opacity: 0.45;
+    transition: transform 0.3s var(--ease-smooth), opacity 0.3s, color 0.3s;
 }
 
 .card:hover .card-arrow {
     opacity: 1;
-    color: var(--color-accent);
+    color: var(--tint);
     transform: translate(2px, -2px);
 }
 
@@ -182,33 +342,59 @@
     line-height: 1.5;
 }
 
-/* ---- Mobil ---- */
+/* ================= Mobil ================= */
+@media (max-width: 760px) {
+    .dashboard-hero-logo-wrap {
+        display: none;
+    }
+}
+
 @media (max-width: 640px) {
     .dashboard-hero {
-        padding: 24px 22px;
-        border-radius: 20px;
+        padding: 24px 20px;
+        border-radius: 22px;
     }
 
     .dashboard-hero h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .dashboard-hero p {
         font-size: 13.5px;
     }
 
-    .dashboard-hero-logo {
-        display: none;
+    .hero-stats {
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .hero-stat {
+        padding: 7px 11px;
+        flex-direction: column;
+        gap: 0;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .hero-stat strong {
+        font-size: 17px;
+    }
+
+    .hero-stat span {
+        font-size: 11px;
+    }
+
+    .dash-group {
+        margin-top: 24px;
     }
 
     .cards {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin-top: 20px;
+        gap: 10px;
     }
 
     .card {
-        padding: 16px;
+        padding: 15px;
         border-radius: 16px;
     }
 
@@ -222,6 +408,7 @@
         border-radius: 12px;
     }
 
+    .card-count,
     .card-arrow {
         display: none;
     }
