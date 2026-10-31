@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -26,8 +26,20 @@ import { api } from "./attestation/api";
 
 import "./Layout.css";
 
+const PAGES = [
+  "dashboard", "about", "imanum", "bnpl", "invest", "investCalc", "workDays", "kvadrat",
+  "ident", "scripts", "offer", "playbookTabs", "qa", "attestation", "admin", "settings",
+];
+
+// Joriy sahifa URL hash'da saqlanadi: yangilaganda yo'qolmaydi, "orqaga" tugmasi ishlaydi
+function pageFromHash() {
+  const key = window.location.hash.replace(/^#\/?/, "");
+  return PAGES.includes(key) ? key : "dashboard";
+}
+
 function App() {
-  const [page, setPage] = useState("dashboard");
+  const [page, setPageState] = useState(pageFromHash);
+  const contentRef = useRef(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [splashDone, setSplashDone] = useState(false);
   const lock = useExamLock();
@@ -44,6 +56,23 @@ function App() {
       })
       .catch(() => {});
   }, [user]);
+
+  useEffect(() => {
+    const onHash = () => setPageState(pageFromHash());
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  // Yangi sahifa ochilganda kontent yuqoridan boshlanadi
+  useEffect(() => {
+    contentRef.current?.scrollTo({ top: 0, behavior: "instant" });
+  }, [page]);
+
+  function setPage(key) {
+    if (key === page) return;
+    window.location.hash = key === "dashboard" ? "" : `/${key}`;
+    setPageState(key);
+  }
 
   // Imtihon davomida playbook umuman ko'rsatilmaydi
   const examActive = lock && !(lock.submitted && lock.owner && lock.owner !== TAB_ID);
@@ -121,7 +150,9 @@ function App() {
             onClose={() => setSidebarOpen(false)}
           />
 
-          <div className="content">{renderPage()}</div>
+          <main className="content" ref={contentRef}>
+            <div key={page}>{renderPage()}</div>
+          </main>
         </div>
       </div>
     </>

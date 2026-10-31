@@ -1,4 +1,5 @@
 import { useMemo, useState, useRef, useEffect } from "react";
+import { Search } from "lucide-react";
 import "./Header.css";
 import { useLanguage } from "../context/LanguageContext";
 import { searchIndex } from "../data/searchIndex";
@@ -13,6 +14,7 @@ function Header({ onMenuClick, setPage }) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const boxRef = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -20,8 +22,23 @@ function Header({ onMenuClick, setPage }) {
         setOpen(false);
       }
     }
+    // "/" tugmasi qidiruvga fokus beradi, Esc yopadi
+    function handleKey(e) {
+      const tag = e.target.tagName;
+      if (e.key === "/" && tag !== "INPUT" && tag !== "TEXTAREA" && !e.target.isContentEditable) {
+        e.preventDefault();
+        inputRef.current?.focus();
+      } else if (e.key === "Escape") {
+        setOpen(false);
+        inputRef.current?.blur();
+      }
+    }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKey);
+    };
   }, []);
 
   const results = useMemo(() => {
@@ -56,7 +73,7 @@ function Header({ onMenuClick, setPage }) {
           <span />
         </button>
 
-        <div className="logo">
+        <div className="logo" onClick={() => goTo("dashboard")}>
           <img src={logo} alt="IMAN" className="logo-mark" />
           <div className="logo-text">
             <h2>{t("app.name")}</h2>
@@ -67,9 +84,12 @@ function Header({ onMenuClick, setPage }) {
 
       <div className="header-right">
         <div className="search-box-wrap" ref={boxRef}>
+          <Search size={16} strokeWidth={2} className="search-icon" />
           <input
+            ref={inputRef}
             className="search"
-            type="text"
+            type="search"
+            aria-label={t("app.searchPlaceholder")}
             placeholder={t("app.searchPlaceholder")}
             value={query}
             onChange={(e) => {
@@ -78,6 +98,7 @@ function Header({ onMenuClick, setPage }) {
             }}
             onFocus={() => setOpen(true)}
           />
+          {!query && <kbd className="search-kbd">/</kbd>}
 
           {open && query.trim().length >= 2 && (
             <div className="search-dropdown">
@@ -87,6 +108,7 @@ function Header({ onMenuClick, setPage }) {
                 results.map((item) => (
                   <button
                     key={`${item.page}-${item.id}`}
+                    type="button"
                     className="search-result"
                     onClick={() => goTo(item.page)}
                   >

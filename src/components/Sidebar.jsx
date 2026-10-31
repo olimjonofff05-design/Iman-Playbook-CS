@@ -35,7 +35,7 @@ function Sidebar({ page, setPage, isOpen = false, onClose }) {
         onClick={onClose}
       />
 
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <nav className={`sidebar ${isOpen ? "open" : ""}`} aria-label="Menu">
         <div className="sidebar-top">
           <h3>Menu</h3>
           <button
@@ -55,7 +55,16 @@ function Sidebar({ page, setPage, isOpen = false, onClose }) {
               <li
                 key={key}
                 className={page === key ? "active" : ""}
+                role="button"
+                tabIndex={0}
+                aria-current={page === key ? "page" : undefined}
                 onClick={() => setPage(key)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setPage(key);
+                  }
+                }}
               >
                 <Icon size={18} strokeWidth={1.75} className="menu-icon" />
                 <span>{t(`menu.${key}`)}</span>
@@ -65,7 +74,7 @@ function Sidebar({ page, setPage, isOpen = false, onClose }) {
         </ul>
 
         <div className="sidebar-footer">{t("app.owner")}</div>
-      </div>
+      </nav>
     </>
   );
 }
