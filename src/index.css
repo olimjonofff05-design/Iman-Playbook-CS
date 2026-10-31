@@ -2,25 +2,34 @@
 
 :root {
   /* IMAN uslubidagi issiq palitra */
-  --color-bg: #EFE3CC;
-  --color-surface: #FBF6EC;
-  --color-surface-alt: #F3E9D6;
-  --color-border: #E2D2AF;
+  --color-bg: #F4EADA;
+  --color-surface: #FFFCF6;
+  --color-surface-alt: #F6EEDF;
+  --color-border: #E8DAC0;
   --color-text: #241C15;
-  --color-text-muted: #8C7A61;
+  --color-text-muted: #85735B;
   --color-accent: #7A3423;
   --color-accent-hover: #5E2818;
-  --color-accent-soft: #F0DFC4;
+  --color-accent-soft: #F3E3CB;
   --color-accent-soft-text: #6B3420;
+  --color-gold: #C9944F;
 
-  --color-sidebar-bg: #1E1712;
+  --color-sidebar-bg: #1C1511;
   --color-sidebar-text: #EAE0CC;
-  --color-sidebar-text-muted: #A6957C;
-  --color-sidebar-active-bg: #34281F;
+  --color-sidebar-text-muted: #9C8B73;
+  --color-sidebar-active-bg: rgba(231, 183, 126, 0.12);
   --color-sidebar-active-text: #E7B77E;
 
-  --shadow-soft: 0 6px 20px rgba(36, 28, 21, 0.08);
-  --shadow-hover: 0 12px 28px rgba(36, 28, 21, 0.14);
+  --gradient-accent: linear-gradient(135deg, #8E3E29 0%, #6A2C1C 55%, #4A1E13 100%);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --shadow-soft: 0 1px 2px rgba(36, 28, 21, 0.04), 0 6px 18px rgba(36, 28, 21, 0.06);
+  --shadow-hover: 0 2px 6px rgba(36, 28, 21, 0.06), 0 16px 34px rgba(36, 28, 21, 0.12);
+
+  --header-height: 72px;
 
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
@@ -40,6 +49,16 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  background:
+    radial-gradient(1200px 600px at 100% -10%, rgba(201, 148, 79, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 0% 110%, rgba(122, 52, 35, 0.08), transparent 60%),
+    var(--color-bg);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
 }
 
 #root {
@@ -58,14 +77,19 @@ h1, h2, h3 {
 
 h1 {
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+h2, h3 {
+  letter-spacing: -0.01em;
 }
 
 p {
   margin: 0;
 }
 
-button, input, select {
+button, input, select, textarea {
   font-family: var(--font-sans);
 }
 
@@ -73,21 +97,9 @@ code {
   font-family: ui-monospace, Consolas, monospace;
 }
 
-/* Butun ilova bo'ylab wide-tracked uppercase label uslubi (skrindagi kabi) */
+/* Butun ilova bo'ylab wide-tracked uppercase label uslubi */
 .label-caps {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 600;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 10px;
 }

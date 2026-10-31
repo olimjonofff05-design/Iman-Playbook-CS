@@ -108,22 +108,21 @@ button:active {
 .sidebar li.active::before {
     content: "";
     position: absolute;
-    left: -16px;
-    top: 8px;
-    bottom: 8px;
-    width: 4px;
-    border-radius: 0 4px 4px 0;
+    left: 0;
+    top: 9px;
+    bottom: 9px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
     background: var(--color-sidebar-active-text);
+    box-shadow: 0 0 10px rgba(231, 183, 126, 0.6);
 }
-.sidebar li:hover {
-    transform: translateX(2px);
+.sidebar li:hover .menu-icon {
+    transform: translateX(1px);
 }
 .sidebar li .menu-icon {
     transition: transform 0.25s var(--ease-smooth), color 0.2s var(--ease-smooth);
 }
-.sidebar li:hover .menu-icon {
-    transform: scale(1.1);
-}
+
 
 /* ---- Header logotipiga yengil interaktivlik ---- */
 .logo-mark {
