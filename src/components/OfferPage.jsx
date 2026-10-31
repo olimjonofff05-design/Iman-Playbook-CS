@@ -57,7 +57,7 @@ function OfferPage() {
     <div className="offer-page">
       <div className="page-header">
         <h1>
-          <Icon size={28} strokeWidth={1.75} className="page-icon" />
+          <span className="page-icon"><Icon size={28} strokeWidth={1.75} /></span>
           {t("offer.title")}
         </h1>
       </div>

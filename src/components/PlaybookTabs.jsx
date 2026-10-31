@@ -160,6 +160,15 @@ function PlaybookTabs() {
                   key={item.id}
                   className={`faq-card ${isOpen ? "open" : ""}`}
                   onClick={() => setOpenFaqId(isOpen ? null : item.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isOpen}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      e.currentTarget.click();
+                    }
+                  }}
                 >
                   <h3>{item.q}</h3>
                   {isOpen ? <p>{item.a}</p> : <p className="faq-preview">{item.a}</p>}
