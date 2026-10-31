@@ -1,34 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* IMAN uslubidagi issiq palitra */
-  --color-bg: #F4EADA;
-  --color-surface: #FFFCF6;
-  --color-surface-alt: #F6EEDF;
-  --color-border: #E8DAC0;
-  --color-text: #241C15;
-  --color-text-muted: #85735B;
-  --color-accent: #7A3423;
-  --color-accent-hover: #5E2818;
-  --color-accent-soft: #F3E3CB;
+  /* IMAN uslubidagi yorqin, iliq palitra */
+  --color-bg: #FBF7F1;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #FAF4EA;
+  --color-border: #EEE3D1;
+  --color-border-strong: #E2CFB0;
+  --color-text: #1E1611;
+  --color-text-muted: #7A6853;
+  --color-accent: #8A3B25;
+  --color-accent-hover: #6E2D1B;
+  --color-accent-soft: #F7E8D6;
   --color-accent-soft-text: #6B3420;
-  --color-gold: #C9944F;
+  --color-gold: #D19A4E;
 
-  --color-sidebar-bg: #1C1511;
-  --color-sidebar-text: #EAE0CC;
-  --color-sidebar-text-muted: #9C8B73;
-  --color-sidebar-active-bg: rgba(231, 183, 126, 0.12);
-  --color-sidebar-active-text: #E7B77E;
+  --color-sidebar-bg: #1A1310;
+  --color-sidebar-text: #EFE6D6;
+  --color-sidebar-text-muted: #A39079;
+  --color-sidebar-active-bg: rgba(233, 182, 120, 0.14);
+  --color-sidebar-active-text: #F0BF84;
 
-  --gradient-accent: linear-gradient(135deg, #8E3E29 0%, #6A2C1C 55%, #4A1E13 100%);
+  --gradient-accent: linear-gradient(135deg, #B0532F 0%, #8A3B25 45%, #571F12 100%);
+  --gradient-gold: linear-gradient(135deg, #F3C98B 0%, #D19A4E 100%);
 
   --radius-sm: 10px;
   --radius-md: 14px;
   --radius-lg: 20px;
 
-  --shadow-soft: 0 1px 2px rgba(36, 28, 21, 0.04), 0 6px 18px rgba(36, 28, 21, 0.06);
-  --shadow-hover: 0 2px 6px rgba(36, 28, 21, 0.06), 0 16px 34px rgba(36, 28, 21, 0.12);
+  --shadow-soft: 0 1px 2px rgba(60, 35, 20, 0.04), 0 4px 14px rgba(60, 35, 20, 0.05);
+  --shadow-hover: 0 2px 6px rgba(60, 35, 20, 0.05), 0 18px 40px rgba(60, 35, 20, 0.11);
 
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   --header-height: 72px;
 
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -50,8 +53,9 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    radial-gradient(1200px 600px at 100% -10%, rgba(201, 148, 79, 0.16), transparent 60%),
-    radial-gradient(900px 500px at 0% 110%, rgba(122, 52, 35, 0.08), transparent 60%),
+    radial-gradient(900px 520px at 100% -8%, rgba(243, 201, 139, 0.32), transparent 62%),
+    radial-gradient(700px 480px at 30% -12%, rgba(255, 214, 196, 0.35), transparent 60%),
+    radial-gradient(900px 600px at 0% 110%, rgba(176, 83, 47, 0.07), transparent 60%),
     var(--color-bg);
   background-attachment: fixed;
 }

@@ -2,7 +2,8 @@ import { useMemo, useState, useRef, useEffect } from "react";
 import { Search } from "lucide-react";
 import "./Header.css";
 import { useLanguage } from "../context/LanguageContext";
-import { searchIndex } from "../data/searchIndex";
+import { icons } from "../icons";
+import { TINTS } from "../navigation";
 import WhatsNew from "./WhatsNew";
 import logo from "../assets/iman-logo.png";
 
@@ -13,8 +14,15 @@ function Header({ onMenuClick, setPage }) {
 
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
+  const [searchIndex, setSearchIndex] = useState(null);
   const boxRef = useRef(null);
   const inputRef = useRef(null);
+
+  // Qidiruv ma'lumotlari faqat qidiruvdan foydalanilganda yuklanadi
+  function loadIndex() {
+    if (searchIndex) return;
+    import("../data/searchIndex").then((m) => setSearchIndex(m.searchIndex));
+  }
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -43,7 +51,7 @@ function Header({ onMenuClick, setPage }) {
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (q.length < 2) return [];
+    if (q.length < 2 || !searchIndex) return [];
     return searchIndex
       .filter((item) => {
         const question = (item.q?.[language] ?? item.q ?? "").toLowerCase();
@@ -51,7 +59,7 @@ function Header({ onMenuClick, setPage }) {
         return question.includes(q) || answer.includes(q);
       })
       .slice(0, 8);
-  }, [query, language]);
+  }, [query, language, searchIndex]);
 
   function goTo(page) {
     setPage?.(page);
@@ -96,26 +104,38 @@ function Header({ onMenuClick, setPage }) {
               setQuery(e.target.value);
               setOpen(true);
             }}
-            onFocus={() => setOpen(true)}
+            onFocus={() => {
+              loadIndex();
+              setOpen(true);
+            }}
           />
           {!query && <kbd className="search-kbd">/</kbd>}
 
-          {open && query.trim().length >= 2 && (
+          {open && searchIndex && query.trim().length >= 2 && (
             <div className="search-dropdown">
               {results.length === 0 ? (
                 <div className="search-empty">{t("common.emptyState")}</div>
               ) : (
-                results.map((item) => (
-                  <button
-                    key={`${item.page}-${item.id}`}
-                    type="button"
-                    className="search-result"
-                    onClick={() => goTo(item.page)}
-                  >
-                    <span className="search-result-page">{t(`menu.${item.page}`)}</span>
-                    <span className="search-result-q">{item.q?.[language] ?? item.q}</span>
-                  </button>
-                ))
+                results.map((item) => {
+                  const Icon = icons[item.page];
+                  return (
+                    <button
+                      key={`${item.page}-${item.id}`}
+                      type="button"
+                      className="search-result"
+                      style={{ "--tint": TINTS[item.page] }}
+                      onClick={() => goTo(item.page)}
+                    >
+                      <span className="search-result-icon">
+                        <Icon size={16} strokeWidth={2} />
+                      </span>
+                      <span className="search-result-body">
+                        <span className="search-result-page">{t(`menu.${item.page}`)}</span>
+                        <span className="search-result-q">{item.q?.[language] ?? item.q}</span>
+                      </span>
+                    </button>
+                  );
+                })
               )}
             </div>
           )}

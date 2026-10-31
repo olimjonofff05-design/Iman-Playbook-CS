@@ -5,10 +5,6 @@
    qo'shadi. Xavfsiz: hech qanday layout yoki rangni buzmaydi.
    ============================================================ */
 
-:root {
-    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 /* ---- Sahifa almashganda yumshoq paydo bo'lish ---- */
 @keyframes fadeInUp {
     from {
@@ -35,28 +31,6 @@
         transform 0.3s var(--ease-smooth),
         box-shadow 0.3s var(--ease-smooth),
         border-color 0.3s var(--ease-smooth);
-}
-
-/* ---- Dashboard kartalarining ketma-ket (stagger) paydo bo'lishi ---- */
-.cards .card {
-    animation: fadeInUp 0.5s var(--ease-smooth) backwards;
-}
-.cards .card:nth-child(1) { animation-delay: 0.02s; }
-.cards .card:nth-child(2) { animation-delay: 0.06s; }
-.cards .card:nth-child(3) { animation-delay: 0.1s; }
-.cards .card:nth-child(4) { animation-delay: 0.14s; }
-.cards .card:nth-child(5) { animation-delay: 0.18s; }
-.cards .card:nth-child(6) { animation-delay: 0.22s; }
-.cards .card:nth-child(7) { animation-delay: 0.26s; }
-.cards .card:nth-child(8) { animation-delay: 0.3s; }
-.cards .card:nth-child(9) { animation-delay: 0.34s; }
-.cards .card:nth-child(10) { animation-delay: 0.38s; }
-
-.card-icon {
-    transition: transform 0.3s var(--ease-smooth);
-}
-.card:hover .card-icon {
-    transform: scale(1.08) rotate(-3deg);
 }
 
 /* ---- Ingichka, IMAN palitrasiga mos scrollbar ---- */
@@ -137,11 +111,9 @@ button:active {
     animation: fadeInUp 0.2s var(--ease-smooth);
 }
 .search-result {
-    transition: background 0.15s var(--ease-smooth), padding-left 0.15s var(--ease-smooth);
+    transition: background 0.15s var(--ease-smooth);
 }
-.search-result:hover {
-    padding-left: 22px;
-}
+
 
 /* ---- Tab va kategoriya tugmalari uchun "pop" effekt ---- */
 .category-tabs button,
@@ -168,30 +140,22 @@ button:active {
     }
 }
 
-/* ---- Asosiy (primary) tugmalar: yagona gradient uslub ---- */
-.save-btn,
-.qa-submit,
-.att-btn-primary,
-.playbook-tab-btn.active {
+/* ---- Asosiy (primary) tugmalar: yagona gradient uslub ----
+   #root prefiksi — sahifalarning o'z CSS fayllari keyin yuklansa ham shu uslub ustun turishi uchun */
+#root :is(.save-btn, .qa-submit, .att-btn-primary, .playbook-tab-btn.active) {
     background: var(--gradient-accent);
     border-color: transparent;
     color: #fff;
-    box-shadow: 0 6px 16px rgba(122, 52, 35, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 16px rgba(122, 52, 35, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    transition: filter 0.2s, box-shadow 0.2s, transform 0.15s var(--ease-smooth);
 }
-.save-btn:hover,
-.qa-submit:hover:not(:disabled),
-.att-btn-primary:hover:not(:disabled) {
-    background: var(--gradient-accent);
-    filter: brightness(1.08);
-    box-shadow: 0 10px 22px rgba(122, 52, 35, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+#root :is(.save-btn, .qa-submit, .att-btn-primary):hover:not(:disabled) {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 22px rgba(122, 52, 35, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 /* ---- Forma maydonlari: yagona fokus holati ---- */
-.qa-form input:focus,
-.qa-form textarea:focus,
-.settings-form input:focus,
-.settings-form select:focus,
-.calc-card input:focus {
+#root :is(.qa-form, .settings-form, .calc-card, .att-card) :is(input, textarea, select):focus {
     outline: none;
     border-color: var(--color-accent);
     background-color: #fff;
