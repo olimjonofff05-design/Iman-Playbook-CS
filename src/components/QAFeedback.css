@@ -92,15 +92,15 @@
 }
 
 .qa-alert-success {
-    background: #e6f6ec;
-    color: #1a7f3c;
-    border: 1px solid #b7e5c6;
+    background: var(--success-bg);
+    color: var(--success-fg);
+    border: 1px solid var(--success-border);
 }
 
 .qa-alert-error {
-    background: #fdeaea;
-    color: #b3261e;
-    border: 1px solid #f3bcbc;
+    background: var(--danger-bg);
+    color: var(--danger-fg);
+    border: 1px solid var(--danger-border);
 }
 
 @media (max-width: 640px) {

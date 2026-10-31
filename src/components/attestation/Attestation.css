@@ -40,8 +40,8 @@
 .att-small { font-size: 13px; }
 .att-mono { font-family: ui-monospace, Consolas, monospace; }
 .att-pre { white-space: pre-wrap; }
-.att-text-danger { color: #b3261e; }
-.att-text-success { color: #1a7f3c; }
+.att-text-danger { color: var(--danger-fg); }
+.att-text-success { color: var(--success-fg); }
 .att-text-danger svg, .att-text-success svg { vertical-align: -3px; }
 
 .att-card {
@@ -77,7 +77,7 @@
   color: #fff;
 }
 .att-btn-primary:hover:not(:disabled) { background: var(--color-accent-hover); }
-.att-btn-success { background: #1a7f3c; border-color: #1a7f3c; color: #fff; }
+.att-btn-success { background: var(--success-fg); border-color: var(--success-fg); color: #fff; }
 .att-btn-success:hover:not(:disabled) { background: #136130; border-color: #136130; }
 .att-btn-ghost { background: transparent; }
 .att-btn-sm { padding: 6px 12px; font-size: 13px; }
@@ -97,7 +97,7 @@
   flex-shrink: 0;
 }
 .att-icon-btn:hover:not(:disabled) { background: var(--color-surface-alt); color: var(--color-text); }
-.att-icon-btn.danger:hover:not(:disabled) { color: #b3261e; background: #fdeaea; }
+.att-icon-btn.danger:hover:not(:disabled) { color: var(--danger-fg); background: var(--danger-bg); }
 .att-icon-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 /* ---- Formalar ---- */
@@ -125,7 +125,7 @@
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-elevated);
   color: var(--color-text);
   min-width: 0;
 }
@@ -142,8 +142,8 @@
 
 /* ---- Bildirishnomalar ---- */
 .att-alert { padding: 12px 16px; border-radius: 12px; font-size: 14px; margin: 10px 0; }
-.att-alert-error { background: #fdeaea; color: #b3261e; border: 1px solid #f3bcbc; }
-.att-alert-success { background: #e6f6ec; color: #1a7f3c; border: 1px solid #b7e5c6; }
+.att-alert-error { background: var(--danger-bg); color: var(--danger-fg); border: 1px solid var(--danger-border); }
+.att-alert-success { background: var(--success-bg); color: var(--success-fg); border: 1px solid var(--success-border); }
 .att-alert-info { background: var(--color-accent-soft); color: var(--color-accent-soft-text); border: 1px solid var(--color-border); }
 
 .att-loading { display: flex; align-items: center; gap: 10px; color: var(--color-text-muted); padding: 20px 0; }
@@ -166,14 +166,14 @@
   color: var(--color-text-muted);
   white-space: nowrap;
 }
-.att-badge-junior { background: #e3eefb; color: #1d4f91; }
-.att-badge-middle { background: #f3e3f7; color: #6b2a80; }
-.att-badge-warn, .att-status-in_progress, .att-status-review { background: #fff1d6; color: #8a5300; }
-.att-status-granted { background: #e3eefb; color: #1d4f91; }
-.att-status-submitted { background: #e6f6ec; color: #1a7f3c; }
+.att-badge-junior { background: var(--info-bg); color: var(--info-fg); }
+.att-badge-middle { background: var(--purple-bg); color: var(--purple-fg); }
+.att-badge-warn, .att-status-in_progress, .att-status-review { background: var(--warn-bg); color: var(--warn-fg); }
+.att-status-granted { background: var(--info-bg); color: var(--info-fg); }
+.att-status-submitted { background: var(--success-bg); color: var(--success-fg); }
 .att-exam-draft { background: var(--color-surface-alt); color: var(--color-text-muted); }
-.att-exam-active { background: #e6f6ec; color: #1a7f3c; }
-.att-exam-closed { background: #fdeaea; color: #b3261e; }
+.att-exam-active { background: var(--success-bg); color: var(--success-fg); }
+.att-exam-closed { background: var(--danger-bg); color: var(--danger-fg); }
 
 /* ---- Yopiq holat / login ---- */
 .att-locked { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 10px 0 30px; }
@@ -219,9 +219,9 @@
 .att-result.compact { margin-bottom: 0; }
 .att-result-title { font-weight: 700; font-size: 16px; }
 .att-result-status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; }
-.att-result-status.pass { color: #1a7f3c; }
-.att-result-status.fail { color: #b3261e; }
-.att-result-status.review, .att-result-status.neutral { color: #8a5300; }
+.att-result-status.pass { color: var(--success-fg); }
+.att-result-status.fail { color: var(--danger-fg); }
+.att-result-status.review, .att-result-status.neutral { color: var(--warn-fg); }
 .att-result-score { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .att-result-score strong { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
 .att-result.compact .att-result-score strong { font-size: 26px; }
@@ -264,7 +264,7 @@
 .att-option {
   display: flex; gap: 12px; align-items: flex-start;
   padding: 13px 16px; border-radius: 12px; border: 1px solid var(--color-border);
-  background: #fff; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  background: var(--color-elevated); cursor: pointer; transition: border-color 0.15s, background 0.15s;
 }
 .att-option:hover { border-color: var(--color-accent); }
 .att-option.checked { border-color: var(--color-accent); background: var(--color-accent-soft); }
@@ -333,8 +333,8 @@
 .att-qedit-tools { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .att-opt-list { display: flex; flex-direction: column; gap: 8px; }
 .att-opt-row { display: flex; align-items: center; gap: 10px; padding: 4px 4px 4px 12px; border-radius: 12px; border: 1px solid transparent; }
-.att-opt-row.correct { background: #e6f6ec; border-color: #b7e5c6; }
-.att-opt-row > input[type="radio"], .att-opt-row > input[type="checkbox"] { accent-color: #1a7f3c; width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; }
+.att-opt-row.correct { background: var(--success-bg); border-color: var(--success-border); }
+.att-opt-row > input[type="radio"], .att-opt-row > input[type="checkbox"] { accent-color: var(--success-fg); width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; }
 .att-opt-input {
   flex: 1;
   font: inherit;
@@ -343,7 +343,7 @@
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-elevated);
   color: var(--color-text);
   resize: vertical;
   min-width: 0;
@@ -373,14 +373,14 @@
 .att-attempt-summary div { background: var(--color-surface-alt); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
 .att-attempt-summary span { font-size: 12px; color: var(--color-text-muted); }
 .att-review-list { display: flex; flex-direction: column; gap: 12px; }
-.att-review-item { border: 1px solid var(--color-border); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; background: #fff; }
+.att-review-item { border: 1px solid var(--color-border); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; background: var(--color-elevated); }
 .att-review-item .att-question-text { font-size: 15px; }
 .att-review-head { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; }
 .att-review-head span { display: inline-flex; align-items: center; gap: 5px; font-weight: 700; }
 .att-review-options { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .att-review-options li { padding: 7px 12px; border-radius: 10px; background: var(--color-surface-alt); font-size: 14px; }
-.att-review-options li.correct { background: #e6f6ec; color: #1a5f30; }
-.att-review-options li.wrong { background: #fdeaea; color: #8f1f19; }
+.att-review-options li.correct { background: var(--success-bg); color: var(--success-fg); }
+.att-review-options li.wrong { background: var(--danger-bg); color: var(--danger-fg); }
 .att-review-mark { margin-right: 8px; }
 .att-open-answer { background: var(--color-surface-alt); padding: 12px 14px; border-radius: 10px; white-space: pre-wrap; font-size: 14.5px; }
 .att-explain { font-size: 13.5px; color: var(--color-accent-soft-text); background: var(--color-accent-soft); padding: 9px 12px; border-radius: 10px; white-space: pre-wrap; }
@@ -412,7 +412,7 @@
   position: sticky; top: 0; z-index: 10;
 }
 .att-exam-mode-brand { display: flex; align-items: center; gap: 12px; }
-.att-exam-mode-brand img { width: 38px; height: 38px; border-radius: 50%; background: #fff; padding: 4px; }
+.att-exam-mode-logo { width: 38px; height: 38px; flex-shrink: 0; }
 .att-exam-mode-brand strong { display: block; font-size: 16px; }
 .att-exam-mode-brand span { font-size: 12.5px; color: var(--color-sidebar-text-muted); }
 .att-exam-mode-lock {

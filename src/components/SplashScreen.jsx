@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/iman-logo.png";
+import ImanMark from "./ImanMark";
 import "./SplashScreen.css";
 
 const SESSION_KEY = "iman-playbook-splash-shown";
@@ -31,9 +31,11 @@ function SplashScreen({ onDone }) {
 
   return (
     <div className={`splash ${leaving ? "splash-leaving" : ""}`}>
-      <img src={logo} alt="IMAN" className="splash-logo" />
+      <span className="splash-logo brand-badge">
+        <ImanMark size={50} title="IMANUM" />
+      </span>
       <div className="splash-text">
-        <span>IMAN</span>
+        <span>IMANUM</span>
         <span className="splash-text-accent">Playbook</span>
       </div>
       <div className="splash-bar" />

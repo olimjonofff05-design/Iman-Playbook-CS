@@ -14,6 +14,22 @@
   --color-accent-soft: #F7E8D6;
   --color-accent-soft-text: #6B3420;
   --color-gold: #D19A4E;
+  --color-elevated: #FFFFFF;
+
+  /* Holat ranglari (muvaffaqiyat, xato, ogohlantirish, info) */
+  --success-bg: #E6F6EC;
+  --success-fg: #1A7F3C;
+  --success-border: #B7E5C6;
+  --danger-bg: #FDEAEA;
+  --danger-fg: #B3261E;
+  --danger-border: #F3BCBC;
+  --warn-bg: #FDF0E3;
+  --warn-fg: #8A5300;
+  --warn-border: #F1CFA6;
+  --info-bg: #E3EEFB;
+  --info-fg: #1D4F91;
+  --purple-bg: #F3E3F7;
+  --purple-fg: #6B2A80;
 
   --color-sidebar-bg: #1A1310;
   --color-sidebar-text: #EFE6D6;
@@ -34,6 +50,15 @@
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   --header-height: 72px;
 
+  --body-bg:
+    radial-gradient(900px 520px at 100% -8%, rgba(243, 201, 139, 0.32), transparent 62%),
+    radial-gradient(700px 480px at 30% -12%, rgba(255, 214, 196, 0.35), transparent 60%),
+    radial-gradient(900px 600px at 0% 110%, rgba(176, 83, 47, 0.07), transparent 60%),
+    #FBF7F1;
+  --header-bg: rgba(255, 255, 255, 0.7);
+  --hero-bg: linear-gradient(125deg, #B4562F 0%, #8A3B25 38%, #5A2214 72%, #3D160C 100%);
+  color-scheme: light;
+
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   font: 16px/1.5 var(--font-sans);
@@ -45,6 +70,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ================= Tungi rejim =================
+   Chuqur tungi fon, iliq IMAN terrakotasi va oltin nur */
+:root[data-theme="dark"] {
+  --color-bg: #0E0A0B;
+  --color-surface: #181211;
+  --color-surface-alt: #201816;
+  --color-elevated: #241B18;
+  --color-border: #2E2420;
+  --color-border-strong: #45352C;
+  --color-text: #F4EBDD;
+  --color-text-muted: #A8957F;
+  --color-accent: #EC9A6C;
+  --color-accent-hover: #F5B08A;
+  --color-accent-soft: rgba(236, 154, 108, 0.14);
+  --color-accent-soft-text: #F5B890;
+
+  --color-sidebar-bg: #0A0708;
+  --color-sidebar-active-bg: rgba(240, 191, 132, 0.12);
+
+  --gradient-accent: linear-gradient(135deg, #D46C3E 0%, #A04429 48%, #5E2214 100%);
+
+  --success-bg: rgba(52, 168, 98, 0.14);
+  --success-fg: #74D8A0;
+  --success-border: rgba(52, 168, 98, 0.35);
+  --danger-bg: rgba(232, 77, 66, 0.14);
+  --danger-fg: #FF928A;
+  --danger-border: rgba(232, 77, 66, 0.38);
+  --warn-bg: rgba(232, 164, 64, 0.14);
+  --warn-fg: #F3C47E;
+  --warn-border: rgba(232, 164, 64, 0.36);
+  --info-bg: rgba(86, 144, 236, 0.15);
+  --info-fg: #93BBF6;
+  --purple-bg: rgba(176, 98, 210, 0.16);
+  --purple-fg: #D7A8EA;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 18px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 2px 6px rgba(0, 0, 0, 0.35), 0 20px 44px rgba(0, 0, 0, 0.45);
+
+  --body-bg:
+    radial-gradient(800px 520px at 92% -10%, rgba(209, 154, 78, 0.20), transparent 62%),
+    radial-gradient(760px 520px at 8% -6%, rgba(118, 70, 160, 0.16), transparent 60%),
+    radial-gradient(1000px 640px at 50% 115%, rgba(176, 83, 47, 0.16), transparent 62%),
+    linear-gradient(180deg, #0F0B0D 0%, #0C090A 100%);
+  --header-bg: rgba(16, 12, 12, 0.72);
+  --hero-bg: linear-gradient(125deg, #A9492A 0%, #6E2A1A 38%, #3A1622 74%, #1C0F1C 100%);
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -52,12 +125,9 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  background:
-    radial-gradient(900px 520px at 100% -8%, rgba(243, 201, 139, 0.32), transparent 62%),
-    radial-gradient(700px 480px at 30% -12%, rgba(255, 214, 196, 0.35), transparent 60%),
-    radial-gradient(900px 600px at 0% 110%, rgba(176, 83, 47, 0.07), transparent 60%),
-    var(--color-bg);
+  background: var(--body-bg);
   background-attachment: fixed;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
@@ -99,6 +169,17 @@ button, input, select, textarea {
 
 code {
   font-family: ui-monospace, Consolas, monospace;
+}
+
+/* IMAN belgisi uchun dumaloq gradient nishon (header, menyu, splash) */
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  color: #FBE3C2;
+  flex-shrink: 0;
 }
 
 /* Butun ilova bo'ylab wide-tracked uppercase label uslubi */

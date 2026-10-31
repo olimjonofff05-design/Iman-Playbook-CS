@@ -3,7 +3,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { useAuth } from "../context/AuthContext";
 import { icons } from "../icons";
 import { NAV_GROUPS } from "../navigation";
-import logo from "../assets/iman-logo.png";
+import ImanMark from "./ImanMark";
 
 function Sidebar({ page, setPage, isOpen = false, onClose }) {
   const { t } = useLanguage();
@@ -24,8 +24,10 @@ function Sidebar({ page, setPage, isOpen = false, onClose }) {
       <nav className={`sidebar ${isOpen ? "open" : ""}`} aria-label="Menu">
         <div className="sidebar-top">
           <div className="sidebar-brand">
-            <img src={logo} alt="" />
-            <span>IMAN Playbook</span>
+            <span className="brand-badge sidebar-brand-badge">
+              <ImanMark size={18} />
+            </span>
+            <span>{t("app.name")}</span>
           </div>
           <button
             type="button"

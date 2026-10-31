@@ -2,14 +2,40 @@
 <html lang="uz">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/iman-logo.png" />
-    <link rel="apple-touch-icon" href="/iman-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#1C1511" />
-    <meta name="description" content="IMAN Playbook — mijozlarni qo'llab-quvvatlash bo'limi uchun bilim bazasi" />
+    <title>IMANUM Playbook</title>
+    <meta name="description" content="IMANUM Playbook — mijozlarni qo'llab-quvvatlash bo'limi uchun bilim bazasi" />
+    <meta name="application-name" content="IMANUM Playbook" />
+    <meta name="apple-mobile-web-app-title" content="IMANUM" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#FBF7F1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0E0A0B" media="(prefers-color-scheme: dark)" />
+
+    <!-- Havola Telegram va boshqa joylarda ulashilganda ko'rinadigan nom va rasm -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IMANUM Playbook" />
+    <meta property="og:title" content="IMANUM Playbook" />
+    <meta property="og:description" content="Mijozlarni qo'llab-quvvatlash bo'limi uchun bilim bazasi" />
+    <meta property="og:image" content="/icon-512.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>IMAN Playbook</title>
+
+    <!-- Mavzuni sahifa chizilishidan oldin o'rnatadi (oq chaqnash bo'lmasligi uchun) -->
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem("iman-playbook-theme"); } catch (e) {}
+        if (theme !== "dark" && theme !== "light") {
+          theme = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

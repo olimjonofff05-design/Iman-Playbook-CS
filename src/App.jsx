@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import SplashScreen from "./components/SplashScreen";
 import PageLoader from "./components/PageLoader";
+import SkyBackground from "./components/SkyBackground";
 
 // Har bir sahifa alohida yuklanadi — birinchi ochilish tezroq bo'ladi
 const Dashboard = lazy(() => import("./components/Dashboard"));
@@ -140,6 +141,7 @@ function App() {
     <>
       {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
       <div style={{ opacity: splashDone ? 1 : 0, transition: "opacity 0.4s ease" }}>
+        <SkyBackground />
         <Header onMenuClick={() => setSidebarOpen(true)} setPage={setPage} />
 
         <div className="layout">

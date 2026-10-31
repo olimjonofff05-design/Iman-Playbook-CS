@@ -361,7 +361,7 @@
     background: var(--color-accent);
 }
 
-.wd-holiday.wd-inrange::after { background: #fff; }
+.wd-holiday.wd-inrange::after { background: var(--color-elevated); }
 .wd-edge { box-shadow: inset 0 0 0 2.5px var(--color-accent); }
 .wd-today { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; }
 

@@ -13,7 +13,7 @@
     gap: 32px;
     padding: 38px 42px;
     border-radius: 28px;
-    background: linear-gradient(125deg, #B4562F 0%, #8A3B25 38%, #5A2214 72%, #3D160C 100%);
+    background: var(--hero-bg);
     color: #fff;
     box-shadow:
         0 24px 50px -12px rgba(110, 45, 25, 0.45),
@@ -169,7 +169,12 @@
     width: 88px;
     height: 88px;
     border-radius: 50%;
-    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1), 0 12px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 30% 25%, #FFF8EC, #F6DDB6);
+    color: #8A3B25;
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1), 0 0 40px rgba(243, 201, 139, 0.45), 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* ================= Guruhlar ================= */
@@ -292,7 +297,7 @@
     width: 48px;
     height: 48px;
     border-radius: 15px;
-    background: color-mix(in srgb, var(--tint) 11%, #fff);
+    background: color-mix(in srgb, var(--tint) 11%, var(--color-elevated));
     color: var(--tint);
     display: flex;
     align-items: center;
@@ -311,7 +316,7 @@
 .card-count {
     padding: 4px 10px;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--tint) 9%, #fff);
+    background: color-mix(in srgb, var(--tint) 9%, var(--color-elevated));
     color: var(--tint);
     font-size: 11.5px;
     font-weight: 700;

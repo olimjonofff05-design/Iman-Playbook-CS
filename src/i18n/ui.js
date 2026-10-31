@@ -6,12 +6,14 @@ export const ui = {
   uz: {
     att: attUi.uz,
     app: {
-      name: "IMAN Playbook",
+      name: "IMANUM Playbook",
       subtitle: "Customer Support Portal",
       searchPlaceholder: "Portal bo'ylab qidirish...",
       whatsNew: "Yangiliklar",
       profileName: "Azizullo Olimjonov",
       owner: "Owner: Azizullo Olimjonov",
+      themeDark: "Tungi rejim",
+      themeLight: "Kunduzgi rejim",
     },
     menu: {
       dashboard: "Dashboard",
@@ -39,7 +41,7 @@ export const ui = {
       system: "Tizim",
     },
     dashboard: {
-      title: "IMAN Playbookka xush kelibsiz",
+      title: "IMANUM Playbookka xush kelibsiz",
       subtitle: "Mijozlarni qo'llab-quvvatlash bilim bazasi",
       morning: "Xayrli tong",
       afternoon: "Xayrli kun",
@@ -239,12 +241,14 @@ export const ui = {
   ru: {
     att: attUi.ru,
     app: {
-      name: "IMAN Playbook",
+      name: "IMANUM Playbook",
       subtitle: "Customer Support Portal",
       searchPlaceholder: "Поиск по порталу...",
       whatsNew: "Новости",
       profileName: "Azizullo Olimjonov",
       owner: "Владелец: Azizullo Olimjonov",
+      themeDark: "Тёмная тема",
+      themeLight: "Светлая тема",
     },
     menu: {
       dashboard: "Главная",
@@ -272,7 +276,7 @@ export const ui = {
       system: "Система",
     },
     dashboard: {
-      title: "Добро пожаловать в IMAN Playbook",
+      title: "Добро пожаловать в IMANUM Playbook",
       subtitle: "База знаний службы поддержки клиентов",
       morning: "Доброе утро",
       afternoon: "Добрый день",

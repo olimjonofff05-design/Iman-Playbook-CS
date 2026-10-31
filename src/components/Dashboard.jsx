@@ -4,7 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { icons } from "../icons";
 import { NAV_GROUPS, TINTS } from "../navigation";
 import { searchIndex } from "../data/searchIndex";
-import logo from "../assets/iman-logo.png";
+import ImanMark from "./ImanMark";
 
 // Dashboard'da "Asosiy" guruhi bo'lmaydi: Playbook (tezkor) vositalar boshiga o'tadi
 const GROUPS = [
@@ -76,7 +76,9 @@ function Dashboard({ setPage }) {
 
         <div className="dashboard-hero-logo-wrap" aria-hidden="true">
           <span className="hero-ring" />
-          <img src={logo} alt="" className="dashboard-hero-logo" />
+          <span className="dashboard-hero-logo">
+            <ImanMark size={52} />
+          </span>
         </div>
       </section>
 

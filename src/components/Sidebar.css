@@ -34,10 +34,9 @@
     font-size: 15px;
 }
 
-.sidebar-brand img {
+.sidebar-brand-badge {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
 }
 
 .sidebar-group + .sidebar-group {

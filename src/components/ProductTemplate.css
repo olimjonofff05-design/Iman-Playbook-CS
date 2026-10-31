@@ -266,7 +266,7 @@
 
 .product-block-faq .faq-card:hover,
 .product-block-faq .faq-card.open {
-    background: #fff;
+    background: var(--color-elevated);
 }
 
 @media (max-width: 640px) {

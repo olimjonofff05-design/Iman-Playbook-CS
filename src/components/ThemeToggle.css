@@ -1,0 +1,52 @@
+.theme-toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: border-color 0.2s, color 0.2s, box-shadow 0.3s;
+}
+
+.theme-toggle:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.theme-toggle.dark {
+    color: #F3C98B;
+    box-shadow: 0 0 16px rgba(243, 201, 139, 0.25);
+}
+
+/* Quyosh va oy aylanib almashadi */
+.theme-icon {
+    position: absolute;
+    transition: transform 0.5s var(--ease-smooth), opacity 0.35s ease;
+}
+
+.theme-toggle.light .theme-icon-sun {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+}
+
+.theme-toggle.light .theme-icon-moon {
+    transform: rotate(-90deg) scale(0.4);
+    opacity: 0;
+}
+
+.theme-toggle.dark .theme-icon-sun {
+    transform: rotate(90deg) scale(0.4);
+    opacity: 0;
+}
+
+.theme-toggle.dark .theme-icon-moon {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+}
